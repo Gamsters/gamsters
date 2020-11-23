@@ -13,9 +13,8 @@ res.render('my_games/index')
 router.get('/game_search_by_name', (req, res) => {
   const searchedGame = req.query.q
     .toLowerCase()
-    .includes(req.query.q.toLowerCase())
     console.log(searchedGame);
-axios.get(`https://api.boardgameatlas.com/api/search?name=${searchedGame}&client_id=Bb6pHO9yhc&fuzzy_match`)
+axios.get(`https://api.boardgameatlas.com/api/search?client_id=Bb6pHO9yhc&fuzzy=true&name=`+searchedGame)
     .then(game => {
      console.log(game);
     res.render('my_games/search_results', {games:game.data.games})
