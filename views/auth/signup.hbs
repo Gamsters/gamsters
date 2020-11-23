@@ -1,0 +1,23 @@
+<h1>Sign up</h1>
+<div class="auth-page">
+  <form action="/signup" method="POST">
+    <div class='local-auth-form'>
+      <label for="username">Username</label>
+      <input type="text" name="username" required>
+      <label for="password">Password</label>
+      <input type="password" name="password" required>
+      <button type="submit">Sign up</button>
+    </div>
+    <div>
+      <h2>OR</h2>
+    </div>
+    <div class='google-button'>
+      <img src="images/GoogleG.png" alt="google logo">
+      <a href="/google">Sign up with Google</a>
+    </div>
+  </form>
+</div>
+
+{{#if message}}
+<p style="color: red;">{{message}}</p>
+{{/if}}

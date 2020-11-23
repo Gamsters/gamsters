@@ -5,16 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{title}}</title>
-  {{!-- <link rel="stylesheet" href="/stylesheets/style.css" /> --}}
   <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+  <link rel="stylesheet" href="stylesheets/style.css">
 </head>
 
 <nav class="navbar">
     <a href="/">Home</a>
     <a href="/collections">Explore</a>
-    <a href="/signup">Signup</a> 
-    <a href="/login">Login</a>
+  {{#if user}}
+    <a href="/">My Games</a>
+    {{!-- <a href="/">My Friends</a> --}}
     <a href="/logout">Logout</a>
+  {{else}}
+    <a href="/signup">Signup</a>
+    <a href="/login">Login</a>
+  {{/if}}
 </nav>
 
 
