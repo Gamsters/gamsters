@@ -14,6 +14,16 @@ router.get('/login', (req, res) => {
   console.log(loggedInUser);
 });
 
+router.get('/google', passport.authenticate('google'));
+
+router.get(
+  '/google/callback',
+  passport.authenticate('google', {
+    successRedirect: '/',
+    failureRedirect: '/login',
+  })
+);
+
 router.post('/signup', (req, res, next) => {
   const { username, password } = req.body;
   if (password.length < 8) {
