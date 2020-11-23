@@ -132,7 +132,7 @@ const index = require('./routes/index');
 app.use('/', index);
 
 const my_games = require('./routes/my_games');
-app.use('/my_games', my_games);
+app.use('/', my_games);
 
 const auth = require('./routes/auth');
 app.use('/', auth);
