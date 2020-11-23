@@ -1,23 +1,24 @@
-<h1>Test Login Page</h1>
-<p>Welcome {{#if user}}
-  {{user.username}}
-  {{/if}}
-</p>
-
-<form action="/login" method="POST">
-  <label for="username">Username</label>
-  <input type="text" name="username" required>
-  <label for="password">Password</label>
-  <input type="password" name="password" required>
-  <button type="submit">Log in</button>
-</form>
-
-<button><a href="/google">Log in with Google</a></button>
+<h1>Login</h1>
+<div class="auth-page">
+  <form action="/login" method="POST">
+    <div class="local-auth-form">
+      <label for="username">Username</label>
+      <input type="text" name="username" required>
+      <label for="password">Password</label>
+      <input type="password" name="password" required>
+      <button type="submit">Log in</button>
+    </div>
+    <div>
+      <h2>OR</h2>
+    </div>
+    <div class='google-button'>
+      <img src="images/GoogleG.png" alt="google logo">
+      <a href="/google">Log in with Google</a>
+    </div>
+  </form>
+</div>
 
 
 {{#if message}}
-  <p style="color: red;">{{message}}</p>
+<p style="color: red;">{{message}}</p>
 {{/if}}
-
-
-<a href="/logout">Logout</a>
