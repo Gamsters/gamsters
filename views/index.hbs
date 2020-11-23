@@ -1,2 +1,24 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h1>...pick a game already!</h1>
+
+<form action="/game_search" method="POST">
+
+    <label for="players"></label>
+    <select name="players" id="players">
+    </select>
+
+    <label for='time'>Time:</label>
+    <select name='time' id='time'>
+    </select>
+
+    <label for='players'>Genre:</label>
+    <select name='players' id='players'>
+    </select>
+
+    <label for='age'>Age:</label>
+    <select name='age' id='age'>
+    </select>
+
+    <button type="submit">Search for a game!</button>
+</form>
+
+
