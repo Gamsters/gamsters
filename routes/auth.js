@@ -5,7 +5,8 @@ const bcrypt = require('bcrypt');
 const passport = require('passport');
 
 router.get('/signup', (req, res) => {
-  res.render('auth/signup');
+  const loggedInUser = req.user;
+  res.render('auth/signup', { user: loggedInUser });
 });
 
 router.get('/login', (req, res) => {
