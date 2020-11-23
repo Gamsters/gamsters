@@ -131,6 +131,9 @@ app.use(passport.session());
 const index = require('./routes/index');
 app.use('/', index);
 
+const games = require('./routes/games');
+app.use('/', games);
+
 const auth = require('./routes/auth');
 app.use('/', auth);
 

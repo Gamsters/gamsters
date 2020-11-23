@@ -1,10 +1,6 @@
 <h1>...pick a game already!</h1>
 
-<form action="/game_search" method="POST">
-
-    <label for="players"></label>
-    <select name="players" id="players">
-    </select>
+<form action="/game_details" method="get">
 
     <label for='time'>Time:</label>
     <select name='time' id='time'>
@@ -22,9 +18,7 @@
 
     //missing logic to click on the generated game and jump to its page
 
-    
-
-    
+    <button type='submit'><a href='/game_details/{{_id}}/'></a></button>  
 </form>
 
 
