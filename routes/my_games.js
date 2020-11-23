@@ -4,12 +4,12 @@ const User = require('../models/User');
 
 
 // general game search by game's name
-app.get('/my_games/', (req, res) => {
+router.get('/', (req, res) => {
 res.render('index')
 });
 
 // result page of games searched by name
-app.get('/my_games/game_search_by_name', (req, res) => {
+router.get('/game_search_by_name', (req, res) => {
   const searchedGame = req.query.q
     .toLowerCase()
     .includes(req.query.q.toLowerCase())
