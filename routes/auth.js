@@ -9,7 +9,9 @@ router.get('/signup', (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  res.render('auth/login');
+  const loggedInUser = req.user;
+  res.render('auth/login', { user: loggedInUser });;
+  console.log(loggedInUser);
 });
 
 router.post('/signup', (req, res, next) => {
@@ -42,6 +44,39 @@ router.post('/signup', (req, res, next) => {
         });
     }
   });
+});
+
+router.post(
+  '/login',
+  passport.authenticate('local', {
+    successRedirect: '/',
+    failureRedirect: 'login',
+    passReqToCallback: true,
+  })
+);
+
+router.post('/login', (req, res, next) => {
+  const { username, password } = req.body;
+  User.findOne({ username: username })
+    .then((found) => {
+      if (found === null) {
+        res.render('login', { message: 'Invalid credentials' });
+      }
+      if (bcrypt.compareSync(password, found.password)) {
+        req.username = found;
+        res.redirect('/');
+      } else {
+        res.render('login', { message: 'Invalid credentials' });
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+router.get('/logout', (req, res) => {
+  req.logout();
+  res.redirect('/');
 });
 
 module.exports = router;
