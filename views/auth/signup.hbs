@@ -1,1 +1,14 @@
 <h1>Test Signup Page</h1>
+<form action="/signup" method="POST">
+  <label for="username" >Username</label>
+  <input type="text" name="username" required>
+  <label for="password">Password</label>
+  <input type="password" name="password" required>
+  <button type="submit">Sign up</button>
+</form>
+{{#if message}}
+  <p style="color: red;">{{message}}</p>
+{{/if}}
+
+<button><a href="/google">Signup with Google</a></button>
+<a href="/login">Go to login</a>
