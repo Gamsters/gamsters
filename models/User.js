@@ -1,4 +1,3 @@
-
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
@@ -14,6 +13,11 @@ const userSchema = new Schema({
     atlasId: String,
     name: String,
     imgUrl: String,
+    min_playtime: Number,
+    max_playtime: Number,
+    min_players: Number,
+    max_players: Number,
+    min_age: Number,
   }],
   allowFriends: Boolean,
 });
