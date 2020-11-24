@@ -16,7 +16,7 @@ router.get('/game_search_by_name', (req, res) => {
     console.log(searchedGame);
 axios.get(`https://api.boardgameatlas.com/api/search?client_id=Bb6pHO9yhc&fuzzy=true&name=`+searchedGame)
     .then(game => {
-     console.log(game);
+     console.log(game.data.games);
     res.render('my_games/search_results', {games:game.data.games})
   })
     .catch(err => console.log('Error while searching for game by name occured: ', err));
@@ -28,7 +28,15 @@ router.get('/my_games/search_results', (req, res) => {
 res.render('my_games/search_results')
 })
 
-
+router.get('/game_details/:id', (req, res) => {
+  const gameId = req.params.id
+  axios.get(`https://www.boardgameatlas.com/api/search?ids=${gameId}&client_id=JLBr5npPhV`)
+  .then(response => {
+    console.log(response.data.games);
+    res.render('games/game_details', {game: response.data.games})
+    console.log('this is what the hbs is trying to access'+game)
+  })
+})
 
 // export these routes
 module.exports = router;

@@ -1,6 +1,8 @@
 <h1>This is the search result for the game search by name</h1>
 {{#each games}}
 <div>
+<a href="/game_details/{{id}}">
 <img src="{{images.medium}}" alt="Box-image of {{name}}">
 <p>{{name}}</p></div>
+</a>
 {{/each}}
