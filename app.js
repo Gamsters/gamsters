@@ -134,8 +134,10 @@ app.use('/', index);
 const my_games = require('./routes/my_games');
 app.use('/', my_games);
 
+const games = require('./routes/games');
+app.use('/', games);
+
 const auth = require('./routes/auth');
 app.use('/', auth);
-
 
 module.exports = app;

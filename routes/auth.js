@@ -3,10 +3,13 @@ const router = express.Router();
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const passport = require('passport');
+// const { loginCheck } = require('./middlewares');
 
 router.get('/signup', (req, res) => {
-  res.render('auth/signup');
+  const loggedInUser = req.user;
+  res.render('auth/signup', { user: loggedInUser });
 });
+
 
 router.get('/login', (req, res) => {
   const loggedInUser = req.user;
