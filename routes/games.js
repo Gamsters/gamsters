@@ -3,6 +3,7 @@ const router = express.Router();
 const User = require('../models/User');
 const { loginCheck } = require('./middlewares');
 
+
 router.get('/collections', (req, res, next) => {
   const loggedInUser = req.user;
   res.render('games/collections',  { user: loggedInUser });

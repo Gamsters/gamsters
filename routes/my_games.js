@@ -3,6 +3,7 @@ const router = express.Router();
 const User = require('../models/User');
 const axios = require('axios');
 const { loginCheck } = require('./middlewares');
+var flash = require('connect-flash');
 
 // general game search by game's name
 router.get('/my_games', loginCheck(), (req, res) => {

@@ -18,11 +18,6 @@
   <h2>The games you own already</h2>
   <p>There will be some different background color here</p>
   {{#each games}}
-  <div>
-    <a href="/game_details/{{id}}">
-      <img src="{{image_url}}" alt="Box-image of {{name}}" id='my-games-images'>
-      <p>{{name}}</p>
-  </div>
-  </a>
+  {{> game_preview this}}
   {{/each}}
 </div>
