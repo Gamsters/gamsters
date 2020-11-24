@@ -1,18 +1,6 @@
 <h1>...pick a game already!</h1>
 
-<form action="/game_details" method="get">
-
-    {{!-- <label for='time'>Time:</label>
-    <select name='time' id='time'>
-    <option value="">Select time</option>
-    <option value="max_playtime=20">Less than 20 min</option>
-    <option value="min_playtime=20&max_playtime=60">20min - 1hour</option>
-    <option value="min_playtime=60&max_playtime=120">1 hour - 2 hours</option>
-    <option value="min_playtime=120&max_playtime=240">2 hours - 4 hours</option>
-    <option value="min_playtime=240">Play all night!</option>
-    </select> --}}
-
-    <fieldset>
+   <fieldset>
     <legend>Time</legend>
     <input type="radio" name="time" value="max_playtime=20">
     <label>Less than 20 min</label><br/>
@@ -26,27 +14,49 @@
     <label>Play all night!</label>
   </fieldset>
 
-    {{!-- <label for='players'>Min players:</label>
-    <select name='players' id='players'>
-    </select> --}}
 
-    {{!-- <fieldset>
-    <legend>Players</legend>
-    <input type="radio" name="players" value="min_players=1&max_players=1">
-    <label>1 player</label><br/>
-    <input type="radio" name="players" value="min_players=1&max_players=2">
-    <label>1 &mdash; 2 players</label><br/>
-    <input type="radio" name="players" value="min_players=2&max_players=5">
-    <label>2 &mdash; 5 players</label><br/>
-  </fieldset> --}}
 
-  
+  <fieldset>
+    <legend>Number of players</legend>
+
+    <input type="radio" id="oneplayer" name="playerNum" value="0">
+    <label for="oneplayer">1</label><br/>
+
+    <input type="radio" id="onetwoplayer" name="playerNum" value="1">
+    <label for="onetwoplayer">1 &mdash; 2</label><br/>
+
+    <input type="radio" id="twofiveplayer" name="playerNum" value="2">
+    <label for="twofiveplayer">2 &mdash; 5</label><br/>
+
+
+    <input type="radio" id="fiveplayer" name="playerNum" value ="3">
+    <label for="fiveplayer">5 and more</label>
+  </fieldset>
+
+<fieldset>
+    <legend>Minimum age</legend>
+
+    <input type="radio" id="agetwo" name="playerAge" value="0">
+    <label for="agetwo">2 and up</label><br/>
+
+    <input type="radio" id="agefour" name="playerAge" value="1">
+    <label for="agefour">4 and up</label><br/>
+
+    <input type="radio" id="ageeight" name="playerAge" value="2">
+    <label for="ageeight">8 and up</label><br/>
+
+    <input type="radio" id="agetwelve" name="playerAge" value="3">
+    <label for="agetwelve">12 and up</label><br/>
+
+    <input type="radio" id="ageeighteen" name="playerAge" value="4">
+    <label for="ageeighteen">18 and up</label><br/>
+
+    <input type="radio" id="agetwentyone" name="playerAge" value ="5">
+    <label for="agetwentyone">21 and  up</label>
     
+  </fieldset>
 
-    <label for='age'>Age:</label>
-    <select name='age' id='age'>
-    </select>
-
+    
     <button type="submit">Search for a game!</button>
 
 
