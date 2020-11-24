@@ -74,7 +74,16 @@ router.post('/add_game/:id', (req, res) => {
       // console.log(response.data.games[0]);
       console.log(req.user.id);
       User.findByIdAndUpdate(req.user.id, {
-        // username: 'testround2'
+        $push: { games: { 
+          id: id, 
+          name: name,
+          image_url: image_url,
+          min_playtime: min_playtime,
+          max_playtime: max_playtime,
+          min_players: min_players,
+          max_players: max_players,
+          min_age: min_age
+        } },
       })
         .then(() => {
           res.redirect(`/`);
