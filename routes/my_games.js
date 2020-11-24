@@ -7,7 +7,9 @@ const { loginCheck } = require('./middlewares');
 // general game search by game's name
 router.get('/my_games', loginCheck(), (req, res) => {
   const loggedInUser = req.user;
-  res.render('my_games/index', { user: loggedInUser });
+  const myGames = req.user.games;
+  console.log(req.user.games);
+  res.render('my_games/index', { user: loggedInUser, games: myGames });
 });
 
 // result page of games searched by name
@@ -86,7 +88,7 @@ router.post('/add_game/:id', (req, res) => {
         } },
       })
         .then(() => {
-          res.redirect(`/`);
+          res.redirect(`/my_games`);
         })
         .catch((err) => {
           console.log(err);
