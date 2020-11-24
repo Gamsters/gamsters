@@ -1,12 +1,22 @@
 <h1>...pick a game already!</h1>
 
-<form action="/game_details" method="get">
+   <fieldset>
+    <legend>Time</legend>
+    <input type="radio" name="time" value="max_playtime=20">
+    <label>Less than 20 min</label><br/>
+    <input type="radio" name="time" value="min_playtime=20&max_playtime=60">
+    <label>20min &mdash; 1 hour</label><br/>
+    <input type="radio" name="time" value="min_playtime=60&max_playtime=120">
+    <label>1 hour &mdash; 2 hours</label><br/>
+    <input type="radio" name="time" value ="min_playtime=120&max_playtime=240">
+    <label>2 hours &mdash; 4 hours</label><br/>
+    <input type="radio" name="time" value ="min_playtime=240">
+    <label>Play all night!</label>
+  </fieldset>
 
-    <label for='time'>Time:</label>
-    <select name='time' id='time'>
-    </select>
 
-<fieldset>
+
+  <fieldset>
     <legend>Number of players</legend>
 
     <input type="radio" id="oneplayer" name="playerNum" value="0">
@@ -49,9 +59,9 @@
     
     <button type="submit">Search for a game!</button>
 
-    //missing logic to click on the generated game and jump to its page
 
-    <button type='submit'><a href='/game_details/{{_id}}/'></a></button>  
+
+    <a href='/game_details/{{_id}}/'><img src="{{images.medium}}" alt="Box-image of {{name}}"></a>
 </form>
 
 
