@@ -2,13 +2,46 @@
 
 <form action="/game_details" method="get">
 
-    <label for='time'>Time:</label>
+    {{!-- <label for='time'>Time:</label>
     <select name='time' id='time'>
-    </select>
+    <option value="">Select time</option>
+    <option value="max_playtime=20">Less than 20 min</option>
+    <option value="min_playtime=20&max_playtime=60">20min - 1hour</option>
+    <option value="min_playtime=60&max_playtime=120">1 hour - 2 hours</option>
+    <option value="min_playtime=120&max_playtime=240">2 hours - 4 hours</option>
+    <option value="min_playtime=240">Play all night!</option>
+    </select> --}}
 
-    <label for='players'>Min players:</label>
+    <fieldset>
+    <legend>Time</legend>
+    <input type="radio" name="time" value="max_playtime=20">
+    <label>Less than 20 min</label><br/>
+    <input type="radio" name="time" value="min_playtime=20&max_playtime=60">
+    <label>20min &mdash; 1 hour</label><br/>
+    <input type="radio" name="time" value="min_playtime=60&max_playtime=120">
+    <label>1 hour &mdash; 2 hours</label><br/>
+    <input type="radio" name="time" value ="min_playtime=120&max_playtime=240">
+    <label>2 hours &mdash; 4 hours</label><br/>
+    <input type="radio" name="time" value ="min_playtime=240">
+    <label>Play all night!</label>
+  </fieldset>
+
+    {{!-- <label for='players'>Min players:</label>
     <select name='players' id='players'>
-    </select>
+    </select> --}}
+
+    {{!-- <fieldset>
+    <legend>Players</legend>
+    <input type="radio" name="players" value="min_players=1&max_players=1">
+    <label>1 player</label><br/>
+    <input type="radio" name="players" value="min_players=1&max_players=2">
+    <label>1 &mdash; 2 players</label><br/>
+    <input type="radio" name="players" value="min_players=2&max_players=5">
+    <label>2 &mdash; 5 players</label><br/>
+  </fieldset> --}}
+
+  
+    
 
     <label for='age'>Age:</label>
     <select name='age' id='age'>
@@ -16,9 +49,9 @@
 
     <button type="submit">Search for a game!</button>
 
-    //missing logic to click on the generated game and jump to its page
 
-    <button type='submit'><a href='/game_details/{{_id}}/'></a></button>  
+
+    <a href='/game_details/{{_id}}/'><img src="{{images.medium}}" alt="Box-image of {{name}}"></a>
 </form>
 
 
