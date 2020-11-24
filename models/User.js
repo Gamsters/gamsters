@@ -10,9 +10,9 @@ const userSchema = new Schema({
     ref: 'User'
   }],
   games: [{
-    atlasId: String,
+    id: String,
     name: String,
-    imgUrl: String,
+    image_url: String,
     min_playtime: Number,
     max_playtime: Number,
     min_players: Number,

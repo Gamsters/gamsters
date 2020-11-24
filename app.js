@@ -16,6 +16,8 @@ const passport = require('passport');
 const bcrypt = require('bcrypt');
 const User = require('./models/User');
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+hbs.registerPartials(__dirname + '/views/partials')
+var flash = require('connect-flash');
 
 mongoose
   .connect('mongodb://localhost/gamster', { useNewUrlParser: true })
@@ -136,6 +138,7 @@ passport.use(
 
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash())
 
 const index = require('./routes/index');
 app.use('/', index);

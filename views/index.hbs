@@ -1,5 +1,5 @@
 <h1>...pick a game already!</h1>
-
+<form action="/game_details" method='GET'>
    <fieldset>
     <legend>Time</legend>
     <input type="radio" name="time" value="max_playtime=20">
@@ -61,7 +61,7 @@
 
 
 
-    <a href='/game_details/{{_id}}/'><img src="{{images.medium}}" alt="Box-image of {{name}}"></a>
+    <a href='/game_details/{{id}}/'><img src="{{img_url}}" alt="Box-image of {{name}}"></a>
 </form>
 
 

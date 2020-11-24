@@ -1,18 +1,23 @@
 <p>This is index of /my_games AAAAnd at the same time the place where game_search_by_name lives</p>
-<div><h1>Search for games by name</h1>
-<p>And add them to the list of games you own 🎉</p>
+<div>
+  <h1>Search for games by name</h1>
+  <p>And add them to the list of games you own 🎉</p>
 </div>
 
 <div>
-<form action="game_search_by_name" method="GET">
-<label for="game-search">Enter the name</label>
-<input type="text" name="q" id="game-search" placeholder="Catan" /></div>
+  <form action="game_search_by_name" method="GET">
+    <label for="game-search">Enter the name</label>
+    <input type="text" name="q" id="game-search" placeholder="Catan" />
+</div>
 <br>
 <button type="submit">Start the search!</button>
 </form>
 </div>
 <div>
   <hr>
-<h2>The games you own already</h2>
-<p>There will be some different background color here</p>
+  <h2>The games you own already</h2>
+  <p>There will be some different background color here</p>
+  {{#each games}}
+  {{> game_preview this}}
+  {{/each}}
 </div>
