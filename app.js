@@ -54,7 +54,7 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 
 // default value for title local
-app.locals.title = 'Express - Generated with IronGenerator';
+app.locals.title = 'Gamster — Pick a game already!';
 
 app.use(
   session({
@@ -130,6 +130,9 @@ app.use(passport.session());
 
 const index = require('./routes/index');
 app.use('/', index);
+
+const my_games = require('./routes/my_games');
+app.use('/', my_games);
 
 const games = require('./routes/games');
 app.use('/', games);
