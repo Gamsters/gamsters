@@ -21,7 +21,9 @@ var helpers = require('handlebars-helpers');
 var number = helpers.number();
 
 mongoose
-  .connect('mongodb://localhost/gamster', { useNewUrlParser: true })
+// mongodb+srv://gamster:<password>@cluster0.e0suz.mongodb.net/<dbname>?retryWrites=true&w=majority
+// 'mongodb://localhost/gamster', { useNewUrlParser: true }  
+.connect(process.env.MONGODB_URI || 'mongodb+srv://gamster:gamstersNeverDie<3@cluster0.e0suz.mongodb.net/gamster?retryWrites=true&w=majority', { useNewUrlParser: true } )
   .then((x) => {
     console.log(
       `Connected to Mongo! Database name: "${x.connections[0].name}"`
