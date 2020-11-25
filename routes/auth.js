@@ -13,8 +13,12 @@ router.get('/signup', (req, res) => {
 
 router.get('/login', (req, res) => {
   const loggedInUser = req.user;
-  res.render('auth/login', { user: loggedInUser });;
-  console.log(loggedInUser);
+  return loggedInUser
+    ? res.render('auth/login', { user: loggedInUser })
+    : res.render('auth/login', {
+        user: loggedInUser,
+        message: 'Wrong credentials',
+      });
 });
 
 router.get('/google', passport.authenticate('google'));
@@ -58,7 +62,6 @@ router.post('/signup', (req, res, next) => {
     }
   });
 });
-
 
 router.post(
   '/login',

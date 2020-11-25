@@ -4,6 +4,8 @@ const User = require('../models/User');
 const axios = require('axios');
 const { loginCheck } = require('./middlewares');
 var flash = require('connect-flash');
+var helpers = require('handlebars-helpers');
+var number = helpers.number();
 
 // general game search by game's name
 router.get('/my_games', loginCheck(), (req, res) => {
@@ -24,7 +26,6 @@ router.get('/game_search_by_name', loginCheck(), (req, res) => {
         searchedGame
     )
     .then((game) => {
-      //  console.log(game.data.games);
       res.render('my_games/search_results', {
         games: game.data.games,
         user: loggedInUser,
@@ -48,10 +49,11 @@ router.get('/game_details/:id', (req, res) => {
     .get(
       `https://www.boardgameatlas.com/api/search?ids=${clickedGameId}&client_id=JLBr5npPhV`
     )
-    .then((response) => {
+    .then((game) => {
+      game.data.games[0].average_user_rating = game.data.games[0].average_user_rating.toFixed(2),
       // console.log(response.data.games);
       res.render('games/game_details', {
-        game: response.data.games,
+        game: game.data.games,
         user: loggedInUser,
       });
     });

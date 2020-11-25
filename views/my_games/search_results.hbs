@@ -2,10 +2,11 @@
 {{#each games}}
   {{> game_preview this}}
 
-{{!-- {{#if user}} --}}
-<form action="/add_game/{{game.id}}" method="post">
+{{#if ../user}}
+<form action="/add_game/{{id}}" method="post">
   <button type="submit">Add to my games</button>
 </form>
-{{!-- {{/if}} --}}
+{{/if}}
 
 {{/each}}
+
