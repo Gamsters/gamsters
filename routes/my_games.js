@@ -42,21 +42,25 @@ router.get('/my_games/search_results', loginCheck(), (req, res) => {
   res.render('my_games/search_results', { user: loggedInUser });
 });
 
-router.get('/game_details/:id', (req, res) => {
+router.get('/game_details/:id', async (req, res) => {
   const clickedGameId = req.params.id;
   const loggedInUser = req.user;
-  axios
-    .get(
-      `https://www.boardgameatlas.com/api/search?ids=${clickedGameId}&client_id=JLBr5npPhV`
-    )
-    .then((game) => {
-      game.data.games[0].average_user_rating = game.data.games[0].average_user_rating.toFixed(2),
-      // console.log(response.data.games);
-      res.render('games/game_details', {
-        game: game.data.games,
-        user: loggedInUser,
-      });
-    });
+  const gameResponse = await axios.get(
+    `https://www.boardgameatlas.com/api/search?ids=${clickedGameId}&client_id=JLBr5npPhV`
+  );
+
+  gameResponse.data.games[0].average_user_rating = gameResponse.data.games[0].average_user_rating.toFixed(2);
+  // console.log('game response ', gameResponse.data.games[0]);
+  let videoResponse = await axios.get(
+    `https://www.boardgameatlas.com/api/game/videos?game_id=${clickedGameId}&client_id=JLBr5npPhV`
+  );
+  // console.log('gameResponse', gameResponse);
+  console.log('videoResponse', videoResponse.data.videos[0].url);
+  gameResponse.data.games[0].video = videoResponse.data.videos[0].url;
+  res.render('games/game_details', {
+    game: gameResponse.data.games,
+    user: loggedInUser,
+  });
 });
 
 router.post('/add_game/:id', (req, res) => {
