@@ -2,7 +2,7 @@
 <form action="/game_details" method='GET'>
    <fieldset>
     <legend>Time</legend>
-    <input type="radio" id="20min" name="time" value="max_playtime=20" checked="checked">
+    <input type="radio" id="20min" name="time" value="max_playtime=20">
     <label for='20min'>Less than 20 min</label><br/>
     <input type="radio" id='20min1hour' name="time" value="min_playtime=20&max_playtime=60">
     <label for='20min1hour'>20min &mdash; 1 hour</label><br/>
@@ -57,7 +57,7 @@
   </fieldset>
 
     
-    <button type="submit">Search for a game!</button>
+    <button type='button'>Search for a game!</button>
 
 
 
@@ -65,4 +65,39 @@
     <a href='/game_details/{{id}}/'><img src="{{img_url}}" alt="Box-image of {{name}}"></a>
 </form>
 
+<div id='game'>
+<h2>Works</h2>
+
+</div>
+
+<script>
+
+
+document.querySelector('button').onclick = (event) => {
+ let url = 'https://api.boardgameatlas.com/api/search?client_id=Bb6pHO9yhc&';
+
+    let fieldSetTime = document.getElementsByName("time");
+    for(var i = 0; i < fieldSetTime.length; i++) {
+        console.log(fieldSetTime[i])
+        if(fieldSetTime[i].checked == true)
+        {
+            url+= fieldSetTime[i].value;
+        }
+    }
+
+    
+    document.getElementById('game').innerHTML = '<h2>LOADING</h2>';
+    axios.get(url)
+    .then((response) => {
+      console.log('Response', response)
+      document.getElementById('game').innerHTML = `<h2>${response.data.games[0].name}</h2>`;
+    })
+    event.preventDefault()
+    console.log(url);
+}
+
+
+
+
+</script>
 
