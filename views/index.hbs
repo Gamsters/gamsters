@@ -1,18 +1,6 @@
 <h1>...pick a game already!</h1>
-
-<form action="/game_details" method="get">
-
-    {{!-- <label for='time'>Time:</label>
-    <select name='time' id='time'>
-    <option value="">Select time</option>
-    <option value="max_playtime=20">Less than 20 min</option>
-    <option value="min_playtime=20&max_playtime=60">20min - 1hour</option>
-    <option value="min_playtime=60&max_playtime=120">1 hour - 2 hours</option>
-    <option value="min_playtime=120&max_playtime=240">2 hours - 4 hours</option>
-    <option value="min_playtime=240">Play all night!</option>
-    </select> --}}
-
-    <fieldset>
+<form action="/game_details" method='GET'>
+   <fieldset>
     <legend>Time</legend>
     <input type="radio" name="time" value="max_playtime=20">
     <label>Less than 20 min</label><br/>
@@ -26,25 +14,9 @@
     <label>Play all night!</label>
   </fieldset>
 
-    {{!-- <label for='players'>Min players:</label>
-    <select name='players' id='players'>
-    </select> --}}
 
-    {{!-- <fieldset>
-    <legend>Players</legend>
-    <input type="radio" name="players" value="min_players=1&max_players=1">
-    <label>1 player</label><br/>
-    <input type="radio" name="players" value="min_players=1&max_players=2">
-    <label>1 &mdash; 2 players</label><br/>
-    <input type="radio" name="players" value="min_players=2&max_players=5">
-    <label>2 &mdash; 5 players</label><br/>
-  </fieldset> --}}
 
-  
-    
-    </select>
-
-<fieldset>
+  <fieldset>
     <legend>Number of players</legend>
 
     <input type="radio" id="oneplayer" name="playerNum" value="0">
@@ -89,7 +61,7 @@
 
 
 
-    <a href='/game_details/{{_id}}/'><img src="{{images.medium}}" alt="Box-image of {{name}}"></a>
+    <a href='/game_details/{{id}}/'><img src="{{img_url}}" alt="Box-image of {{name}}"></a>
 </form>
 
 
