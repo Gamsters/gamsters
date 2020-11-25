@@ -23,7 +23,7 @@ var number = helpers.number();
 mongoose
 // mongodb+srv://gamster:<password>@cluster0.e0suz.mongodb.net/<dbname>?retryWrites=true&w=majority
 // 'mongodb://localhost/gamster', { useNewUrlParser: true }  
-.connect(process.env.MONGODB_URI || 'mongodb+srv://gamster:gamstersNeverDie<3@cluster0.e0suz.mongodb.net/gamster?retryWrites=true&w=majority', { useNewUrlParser: true } )
+.connect(process.env.MONGODB_URI || 'mongodb://localhost/gamster', { useNewUrlParser: true } )
   .then((x) => {
     console.log(
       `Connected to Mongo! Database name: "${x.connections[0].name}"`
@@ -120,7 +120,7 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: 'http://127.0.0.1:3000/google/callback',
+      callbackURL: 'https://gamster.herokuapp.com/google/callback',
       scope: 'https://www.googleapis.com/auth/userinfo.profile',
     },
     function (accessToken, refreshToken, profile, done) {
