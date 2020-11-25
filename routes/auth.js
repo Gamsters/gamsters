@@ -27,7 +27,7 @@ router.get('/google', passport.authenticate('google'));
 router.get(
   '/google/callback',
   passport.authenticate('google', {
-    successRedirect: '/',
+    successRedirect: '/my_games',
     failureRedirect: '/login_fail',
   })
 );

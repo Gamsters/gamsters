@@ -11,7 +11,7 @@ var number = helpers.number();
 router.get('/my_games', loginCheck(), (req, res) => {
   const loggedInUser = req.user;
   const myGames = req.user.games;
-  console.log(req.user.games);
+  // console.log(req.user.games);
   res.render('my_games/index', { user: loggedInUser, games: myGames });
 });
 
@@ -19,7 +19,7 @@ router.get('/my_games', loginCheck(), (req, res) => {
 router.get('/game_search_by_name', loginCheck(), (req, res) => {
   const loggedInUser = req.user;
   const searchedGame = req.query.q.toLowerCase();
-  console.log(searchedGame);
+  // console.log(searchedGame);
   axios
     .get(
       `https://api.boardgameatlas.com/api/search?client_id=Bb6pHO9yhc&fuzzy=true&name=` +
@@ -55,8 +55,11 @@ router.get('/game_details/:id', async (req, res) => {
     `https://www.boardgameatlas.com/api/game/videos?game_id=${clickedGameId}&client_id=JLBr5npPhV`
   );
   // console.log('gameResponse', gameResponse);
-  // console.log('videoResponse', videoResponse.data.videos[0].url);
-  gameResponse.data.games[0].video = videoResponse.data.videos[0].url;
+  console.log('videoResponse', videoResponse.data.videos[0]);
+  if (videoResponse.data.videos[0]) {
+    gameResponse.data.games[0].video = videoResponse.data.videos[0].url;
+  } 
+  
   res.render('games/game_details', {
     game: gameResponse.data.games,
     user: loggedInUser,
