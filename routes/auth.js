@@ -13,8 +13,13 @@ router.get('/signup', (req, res) => {
 
 router.get('/login', (req, res) => {
   const loggedInUser = req.user;
-  res.render('auth/login', { user: loggedInUser });;
-  console.log(loggedInUser);
+  res.render('auth/login', { user: loggedInUser });
+});
+
+router.get('/login_fail', (req, res) => {
+  res.render('auth/login_fail', {
+        message: 'Login failed: Invalid username or password',
+      });
 });
 
 router.get('/google', passport.authenticate('google'));
@@ -22,8 +27,8 @@ router.get('/google', passport.authenticate('google'));
 router.get(
   '/google/callback',
   passport.authenticate('google', {
-    successRedirect: '/',
-    failureRedirect: '/login',
+    successRedirect: '/my_games',
+    failureRedirect: '/login_fail',
   })
 );
 
@@ -59,12 +64,11 @@ router.post('/signup', (req, res, next) => {
   });
 });
 
-
 router.post(
   '/login',
   passport.authenticate('local', {
     successRedirect: '/',
-    failureRedirect: '/login',
+    failureRedirect: '/login_fail',
     passReqToCallback: true,
   })
 );
