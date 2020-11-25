@@ -55,11 +55,13 @@ router.get('/game_details/:id', async (req, res) => {
     `https://www.boardgameatlas.com/api/game/videos?game_id=${clickedGameId}&client_id=JLBr5npPhV`
   );
   // console.log('gameResponse', gameResponse);
-  console.log('videoResponse', videoResponse.data.videos[0].url);
+  // console.log('videoResponse', videoResponse.data.videos[0].url);
   gameResponse.data.games[0].video = videoResponse.data.videos[0].url;
   res.render('games/game_details', {
     game: gameResponse.data.games,
     user: loggedInUser,
+  }).catch((err) => {
+    console.log(err);
   });
 });
 
