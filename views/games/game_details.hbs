@@ -1,9 +1,5 @@
 
 {{#each game}}
-<h2>{{name}}</h2>
-<img src="{{image_url}}" alt="Cover picture of {{name}}">
-<p>Time: {{min_playtime}}</p>
-<p>Min players: {{min_players}}</p>
-<p>Description: {{description}}</p>              
+{{> game_card this}}          
 {{!-- <button type="submit">Add game to my collection</button> --}}
 {{/each}}

@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
 const { loginCheck } = require('./middlewares');
+var helpers = require('handlebars-helpers');
+var number = helpers.number();
 
 
 router.get('/collections', (req, res, next) => {

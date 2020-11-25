@@ -1,13 +1,11 @@
 <h1>This is the search result for the game search by name</h1>
 {{#each games}}
-<div>
-<a href="/game_details/{{id}}">
-<img src="{{image_url}}" alt="Box-image of {{name}}">
-<p>{{name}}</p></div>
-</a>
+  {{> game_preview this}}
 
-<form action="/add_game/{{id}}" method="post">
+{{!-- {{#if user}} --}}
+<form action="/add_game/{{game.id}}" method="post">
   <button type="submit">Add to my games</button>
 </form>
+{{!-- {{/if}} --}}
 
 {{/each}}

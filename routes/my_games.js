@@ -77,16 +77,18 @@ router.post('/add_game/:id', (req, res) => {
       // console.log(response.data.games[0]);
       console.log(req.user.id);
       User.findByIdAndUpdate(req.user.id, {
-        $push: { games: { 
-          id: id, 
-          name: name,
-          image_url: image_url,
-          min_playtime: min_playtime,
-          max_playtime: max_playtime,
-          min_players: min_players,
-          max_players: max_players,
-          min_age: min_age
-        } },
+        $push: {
+          games: {
+            id: id,
+            name: name,
+            image_url: image_url,
+            min_playtime: min_playtime,
+            max_playtime: max_playtime,
+            min_players: min_players,
+            max_players: max_players,
+            min_age: min_age,
+          },
+        },
       })
         .then(() => {
           res.redirect(`/my_games`);
@@ -94,6 +96,24 @@ router.post('/add_game/:id', (req, res) => {
         .catch((err) => {
           console.log(err);
         });
+    });
+});
+
+router.post('/delete_game/:id', (req, res) => {
+  console.log(req.params.id);
+
+  User.findByIdAndUpdate(req.user.id, {
+    $pull: {
+      games: {
+        _id: req.params.id,
+      },
+    },
+  })
+    .then(() => {
+      res.redirect(`/my_games`);
+    })
+    .catch((err) => {
+      console.log(err);
     });
 });
 
