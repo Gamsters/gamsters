@@ -14,13 +14,16 @@ const MongoStore = require('connect-mongo')(session);
 const LocalStrategy = require('passport-local').Strategy;
 const passport = require('passport');
 const bcrypt = require('bcrypt');
-const User = require('./models/User');
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 hbs.registerPartials(__dirname + '/views/partials')
 var flash = require('connect-flash');
+var helpers = require('handlebars-helpers');
+var number = helpers.number();
 
 mongoose
-  .connect('mongodb://localhost/gamster', { useNewUrlParser: true })
+// mongodb+srv://gamster:<password>@cluster0.e0suz.mongodb.net/<dbname>?retryWrites=true&w=majority
+// 'mongodb://localhost/gamster', { useNewUrlParser: true }  
+.connect(process.env.MONGODB_URI || 'mongodb://localhost/gamster', { useNewUrlParser: true } )
   .then((x) => {
     console.log(
       `Connected to Mongo! Database name: "${x.connections[0].name}"`
@@ -58,6 +61,7 @@ app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
+
 // default value for title local
 app.locals.title = 'Gamster — Pick a game already!';
 
@@ -73,6 +77,11 @@ app.use(
     }),
   })
 );
+
+
+app.use(passport.initialize());
+app.use(passport.session());
+const User = require('./models/User');
 
 passport.serializeUser((user, done) => {
   done(null, user._id);
@@ -111,7 +120,7 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: 'http://127.0.0.1:3000/google/callback',
+      callbackURL: process.env.CALLBACK_URL + '/google/callback',
       scope: 'https://www.googleapis.com/auth/userinfo.profile',
     },
     function (accessToken, refreshToken, profile, done) {
@@ -136,8 +145,6 @@ passport.use(
   )
 );
 
-app.use(passport.initialize());
-app.use(passport.session());
 app.use(flash())
 
 const index = require('./routes/index');

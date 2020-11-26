@@ -1,0 +1,15 @@
+<div class="game_card">
+  <h2>{{name}}</h2>
+  <img src="{{image_url}}" alt="Cover picture of {{name}}">
+  <p>Time: {{min_playtime}}-{{max_playtime}}</p>
+  <p>Players: {{min_players}}-{{max_players}}</p>
+  <p>Minimum age: {{min_age}}</p>
+  <p>Description: {{description}}</p>
+  <p>Price: ${{price}}</p>
+  <p>Average user rating: {{average_user_rating}}</p>
+  <p>Number of user ratings: {{num_user_ratings}}</p>
+  <p>Rank: {{rank}}</p>
+  {{#if video}}
+  <a href="{{video}}">Click here to watch video</a>
+  {{/if}}
+</div>
