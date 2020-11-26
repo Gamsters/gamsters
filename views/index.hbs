@@ -1,10 +1,12 @@
 <h1>...pick a game already!</h1>
+
+<div class='form'>
 <form action="/game_details" method='GET'>
 
    <fieldset>
     <legend>Time</legend>
 
-    <input type="radio" id="20min" name="time" value="max_playtime=20">
+    <input type="radio" id="20min" name="time" value="max_playtime=20" checked='true'>
     <label for='20min'>Less than 20 min</label><br/>
 
     <input type="radio" id='20min1hour' name="time" value="min_playtime=20&max_playtime=60">
@@ -25,7 +27,7 @@
   <fieldset>
     <legend>Number of players</legend>
 
-    <input type="radio" id="oneplayer" name="playerNum" value="min_players=1&max_players=1">
+    <input type="radio" id="oneplayer" name="playerNum" value="min_players=1&max_players=1" checked='true'>
     <label for="oneplayer">1</label><br/>
 
     <input type="radio" id="onetwoplayer" name="playerNum" value="min_players=1&max_players=2">
@@ -42,7 +44,7 @@
 <fieldset>
     <legend>Minimum age</legend>
 
-    <input type="radio" id="agetwo" name="playerAge" value="min_age=2">
+    <input type="radio" id="agetwo" name="playerAge" value="min_age=2" checked='true'>
     <label for="agetwo">2 and up</label><br/>
 
     <input type="radio" id="agefour" name="playerAge" value="min_age=4">
@@ -62,18 +64,20 @@
     
   </fieldset>
 
-    
-    <button type='button'>Search for a game!</button>
 
-
-
-
-   
+  
 </form>
+<br>
+<br>
+    <div class='generator'>
+    <button class='generatorButton'>Search for a game!</button>
+    </div>
+    
+</div>
 
 <div id='game'>
 <h2></h2>
-<a href='' id='details'><img src='' id='loading'></a>
+<a href='' id='details'><img src='' id='loading' class='loadingPic'></a>
 </div>
 
 
@@ -107,19 +111,25 @@ document.querySelector('button').onclick = (event) => {
         }
     }
 
+
+
     {{!-- document.getElementById('game').innerHTML = '<h2>LOADING</h2>'; --}}
     document.getElementById('loading').src = 'https://cdn.dribbble.com/users/1204962/screenshots/4651504/hamster-loader.gif';
    
     axios.get(url)
     .then((response) => {
-
-      document.getElementById('loading').src = `${response.data.games[0].image_url}`;
-      document.getElementById('details').href = `/game_details/${response.data.games[0].id}`;
+    let count = response.data.games.length
+    let random = Math.floor(Math.random() * count)
+    console.log(count)
+      document.getElementById('loading').src = `${response.data.games[random].images.medium}`;
+      document.getElementById('details').href = `/game_details/${response.data.games[random].id}`;
       {{!-- document.getElementById('game').innerHTML = `${response.data.games[0].name}`; --}}
   
     })
     event.preventDefault()
     console.log(url);
+
+
 }
 
 
