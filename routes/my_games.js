@@ -69,6 +69,11 @@ router.get('/game_details/:id', async (req, res) => {
         gameResponse.data.games[0].owned = true;
       }
     }
+    console.log('user logged in');
+  } 
+  if(!loggedInUser){
+    gameResponse.data.games[0].noUser = true;
+    console.log('no user');
   }
 
   // console.log('game id of ', gameResponse.data.games[0].name, ':', gameResponse.data.games[0].id );

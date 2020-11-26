@@ -5,17 +5,19 @@
   </div>
 
   {{!-- <div class="details_buttons"> --}}
-  {{#if owned}}
-  <form action="/delete_game/{{id}}" method="post">
-    <button class="delete_button" type='submit'>Delete from my games</button>
-  </form>
-  {{else}}
-  <form action="/add_game/{{id}}" method="post" class='button_form'>
-    <button class="add_button" type="submit">Add to my games</button>
-  </form>
-  {{/if}}
+  {{#unless noUser}}
+    {{#if owned}}
+      <form action="/delete_game/{{id}}" method="post">
+        <button class="delete_button" type='submit'>Delete from my games</button>
+     </form>
+    {{else}}
+      <form action="/add_game/{{id}}" method="post" class='button_form'>
+        <button class="add_button" type="submit">Add to my games</button>
+      </form>
+    {{/if}}
+  {{/unless}}
 
-    <div class="ratings_video">
+  <div class="ratings_video">
     <div class="ratings">
       <span>
         <h2>{{average_user_rating}}</h2>average user rating
