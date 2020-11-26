@@ -19,7 +19,7 @@
   <p>There will be some different background color here</p>
   {{#each games}}
   {{> game_preview this}}
-  <form action="/delete_game/{{_id}}" method="post">
+  <form action="/delete_game/{{id}}" method="post">
    <button type='submit'>Delete</button>
   </form>
   {{/each}}
