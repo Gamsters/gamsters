@@ -1,15 +1,3 @@
-<script>
-  function generateOneGame () {
-  document.getElementById('generate-game-btn').addEventListener('click', () => {
-
-  const time = document.getElementById('time').value;
-  console.log(time)
-
-  // getCountryInfo(userInput);
-
-})   
-  }
- </script>
  <h1>...pick a game already!</h1>
 <form action="/game_details" method='GET'>
 
@@ -86,7 +74,7 @@
   <div  id="hamster" class="flexcontainer">
     <img class="pushyfriend" src="images/pushyfriend.png" >
     <div class="gamebox">
-      <a href="" class="details-link" id="details-link"><img src="" id="show-game" class="show-game" alt="">
+      <a href="" class="details-link" id="details-link"><img src="images/error.png" id="show-game" class="show-game" alt="Please try some different parameters">
   </a></div>
   </div>
 </div>
@@ -99,46 +87,40 @@
 
 <script>
 document.querySelector('button').onclick = (event) => {
- let url = 'https://api.boardgameatlas.com/api/search?client_id=Bb6pHO9yhc&';
-
+ let url = 'https://api.boardgameatlas.com/api/search?client_id=Bb6pHO9yhc';
     let fieldSetTime = document.getElementsByName("time");
     for(var i = 0; i < fieldSetTime.length; i++) {
         console.log(fieldSetTime[i])
         if(fieldSetTime[i].checked == true)
         {
-            url+= fieldSetTime[i].value;
+            url= url + "&" + fieldSetTime[i].value;
         }
     }
-
     let fieldSetPlayers = document.getElementsByName("playerNum");
     for(var i = 0; i < fieldSetPlayers.length; i++) {
         if(fieldSetPlayers[i].checked == true)
         {
-            url+= fieldSetPlayers[i].value;
+            url= url + "&" + fieldSetPlayers[i].value;
         }
     }
-
         let fieldSetAge = document.getElementsByName("playerAge");
     for(var i = 0; i < fieldSetAge.length; i++) {
         if(fieldSetAge[i].checked == true)
         {
-            url+= fieldSetAge[i].value;
+            url= url + "&" + fieldSetAge[i].value;
         }
     }
-
     {{!-- document.getElementById('game').innerHTML = '<h2>LOADING</h2>'; --}}
     document.getElementById('loading').src = 'https://cdn.dribbble.com/users/1204962/screenshots/4651504/hamster-loader.gif';
    
     axios.get(url)
     .then((response) => {
-
       document.getElementById('loading').className = 'hide-it';
       document.getElementById('pushhamster').className = 'show-it';
       document.getElementById("hamster").classList.add('hamster');
       document.getElementById('show-game').src = `${response.data.games[0].image_url}`;
       document.getElementById('details-link').href = `/game_details/${response.data.games[0].id}`;
   
-
       {{!-- document.getElementById('loading').src = `${response.data.games[0].image_url}`;
       document.getElementById('details').href = `/game_details/${response.data.games[0].id}`;
       document.getElementById('game').innerHTML = `${response.data.games[0].name}`; --}}
@@ -147,8 +129,4 @@ document.querySelector('button').onclick = (event) => {
     event.preventDefault()
     console.log(url);
 }
-
-
-
-
 </script>
