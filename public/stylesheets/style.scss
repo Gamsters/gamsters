@@ -1,10 +1,6 @@
 body {
   padding: 50px;
-  font: 2vw "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00B7FF;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 #my-games-images {
@@ -28,7 +24,7 @@ a {
 }
 
 .game_preview a {
-  color: black
+  color: black;
 }
 
 .game_preview_grid{
@@ -36,3 +32,17 @@ a {
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.delete_button {
+  border: inherit;
+  box-shadow: none;
+}
+
+.test {
+  color: red;
+}
+
+// .game_card {
+//   display: flex;
+//   fe
+// }
