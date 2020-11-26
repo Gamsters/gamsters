@@ -1,17 +1,23 @@
 <h1>...pick a game already!</h1>
 <form action="/game_details" method='GET'>
+
    <fieldset>
     <legend>Time</legend>
-    <input type="radio" name="time" value="max_playtime=20">
-    <label>Less than 20 min</label><br/>
-    <input type="radio" name="time" value="min_playtime=20&max_playtime=60">
-    <label>20min &mdash; 1 hour</label><br/>
-    <input type="radio" name="time" value="min_playtime=60&max_playtime=120">
-    <label>1 hour &mdash; 2 hours</label><br/>
-    <input type="radio" name="time" value ="min_playtime=120&max_playtime=240">
-    <label>2 hours &mdash; 4 hours</label><br/>
-    <input type="radio" name="time" value ="min_playtime=240">
-    <label>Play all night!</label>
+
+    <input type="radio" id="20min" name="time" value="max_playtime=20">
+    <label for='20min'>Less than 20 min</label><br/>
+
+    <input type="radio" id='20min1hour' name="time" value="min_playtime=20&max_playtime=60">
+    <label for='20min1hour'>20min &mdash; 1 hour</label><br/>
+
+    <input type="radio" id='1hour2hours'name="time" value="min_playtime=60&max_playtime=120">
+    <label for='1hour2hours'>1 hour &mdash; 2 hours</label><br/>
+
+    <input type="radio" id='2hours4hours' name="time" value ="min_playtime=120&max_playtime=240">
+    <label for='2hours4hours'>2 hours &mdash; 4 hours</label><br/>
+
+    <input type="radio" id='allnight' name="time" value ="min_playtime=240">
+    <label for='allnight'>Play all night!</label>
   </fieldset>
 
 
@@ -19,49 +25,105 @@
   <fieldset>
     <legend>Number of players</legend>
 
-    <input type="radio" id="oneplayer" name="playerNum" value="0">
+    <input type="radio" id="oneplayer" name="playerNum" value="min_players=1&max_players=1">
     <label for="oneplayer">1</label><br/>
 
-    <input type="radio" id="onetwoplayer" name="playerNum" value="1">
+    <input type="radio" id="onetwoplayer" name="playerNum" value="min_players=1&max_players=2">
     <label for="onetwoplayer">1 &mdash; 2</label><br/>
 
-    <input type="radio" id="twofiveplayer" name="playerNum" value="2">
+    <input type="radio" id="twofiveplayer" name="playerNum" value="min_players=2&max_players=5">
     <label for="twofiveplayer">2 &mdash; 5</label><br/>
 
 
-    <input type="radio" id="fiveplayer" name="playerNum" value ="3">
+    <input type="radio" id="fiveplayer" name="playerNum" value ="min_players=5">
     <label for="fiveplayer">5 and more</label>
   </fieldset>
 
 <fieldset>
     <legend>Minimum age</legend>
 
-    <input type="radio" id="agetwo" name="playerAge" value="0">
+    <input type="radio" id="agetwo" name="playerAge" value="min_age=2">
     <label for="agetwo">2 and up</label><br/>
 
-    <input type="radio" id="agefour" name="playerAge" value="1">
+    <input type="radio" id="agefour" name="playerAge" value="min_age=4">
     <label for="agefour">4 and up</label><br/>
 
-    <input type="radio" id="ageeight" name="playerAge" value="2">
+    <input type="radio" id="ageeight" name="playerAge" value="min_age=8">
     <label for="ageeight">8 and up</label><br/>
 
-    <input type="radio" id="agetwelve" name="playerAge" value="3">
+    <input type="radio" id="agetwelve" name="playerAge" value="min_age=12">
     <label for="agetwelve">12 and up</label><br/>
 
-    <input type="radio" id="ageeighteen" name="playerAge" value="4">
+    <input type="radio" id="ageeighteen" name="playerAge" value="min_age=18">
     <label for="ageeighteen">18 and up</label><br/>
 
-    <input type="radio" id="agetwentyone" name="playerAge" value ="5">
-    <label for="agetwentyone">21 and  up</label>
+    <input type="radio" id="agetwentyone" name="playerAge" value ="min_age=21">
+    <label for="agetwentyone">21 and up</label>
     
   </fieldset>
 
     
-    <button type="submit">Search for a game!</button>
+    <button type='button'>Search for a game!</button>
 
 
 
-    <a href='/game_details/{{id}}/'><img src="{{img_url}}" alt="Box-image of {{name}}"></a>
+
+   
 </form>
 
+<div id='game'>
+<h2></h2>
+<a href='' id='details'><img src='' id='loading'></a>
+</div>
+
+
+
+<script>
+document.querySelector('button').onclick = (event) => {
+ let url = 'https://api.boardgameatlas.com/api/search?client_id=Bb6pHO9yhc&';
+
+    let fieldSetTime = document.getElementsByName("time");
+    for(var i = 0; i < fieldSetTime.length; i++) {
+        console.log(fieldSetTime[i])
+        if(fieldSetTime[i].checked == true)
+        {
+            url+= fieldSetTime[i].value;
+        }
+    }
+
+    let fieldSetPlayers = document.getElementsByName("playerNum");
+    for(var i = 0; i < fieldSetPlayers.length; i++) {
+        if(fieldSetPlayers[i].checked == true)
+        {
+            url+= fieldSetPlayers[i].value;
+        }
+    }
+
+        let fieldSetAge = document.getElementsByName("playerAge");
+    for(var i = 0; i < fieldSetAge.length; i++) {
+        if(fieldSetAge[i].checked == true)
+        {
+            url+= fieldSetAge[i].value;
+        }
+    }
+
+    {{!-- document.getElementById('game').innerHTML = '<h2>LOADING</h2>'; --}}
+    document.getElementById('loading').src = 'https://cdn.dribbble.com/users/1204962/screenshots/4651504/hamster-loader.gif';
+   
+    axios.get(url)
+    .then((response) => {
+
+      document.getElementById('loading').src = `${response.data.games[0].image_url}`;
+      document.getElementById('details').href = `/game_details/${response.data.games[0].id}`;
+      {{!-- document.getElementById('game').innerHTML = `${response.data.games[0].name}`; --}}
+  
+    })
+    event.preventDefault()
+    console.log(url);
+}
+
+
+
+
+</script>
 
