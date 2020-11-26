@@ -129,6 +129,9 @@ nav {
 .game_card img {
   width: 30vw; }
 
+.button_form {
+  background-color: transparent; }
+
 .description {
   padding: 2vw;
   margin: 1vw 3vw; }
