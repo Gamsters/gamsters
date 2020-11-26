@@ -29,6 +29,7 @@ router.get('/game_search_by_name', loginCheck(), (req, res) => {
       res.render('my_games/search_results', {
         games: game.data.games,
         user: loggedInUser,
+        search: req.query.q 
       });
     })
     .catch((err) =>
@@ -39,7 +40,7 @@ router.get('/game_search_by_name', loginCheck(), (req, res) => {
 // just in case anybody stumbles upon this page?
 router.get('/my_games/search_results', loginCheck(), (req, res) => {
   const loggedInUser = req.user;
-  res.render('my_games/search_results', { user: loggedInUser });
+  res.render('my_games/search_results', { user: loggedInUser});
 });
 
 router.get('/game_details/:id', async (req, res) => {
@@ -69,6 +70,11 @@ router.get('/game_details/:id', async (req, res) => {
         gameResponse.data.games[0].owned = true;
       }
     }
+    console.log('user logged in');
+  } 
+  if(!loggedInUser){
+    gameResponse.data.games[0].noUser = true;
+    console.log('no user');
   }
 
   // console.log('game id of ', gameResponse.data.games[0].name, ':', gameResponse.data.games[0].id );

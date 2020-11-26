@@ -1,25 +1,24 @@
-<p>This is index of /my_games AAAAnd at the same time the place where game_search_by_name lives</p>
 <div>
   <h1>Search for games by name</h1>
-  <p>And add them to the list of games you own 🎉</p>
 </div>
 
-<div>
+<div class='my_search_bar'>
   <form action="game_search_by_name" method="GET">
-    <label for="game-search">Enter the name</label>
-    <input type="text" name="q" id="game-search" placeholder="Catan" />
-</div>
-<br>
-<button type="submit">Start the search!</button>
-</form>
-</div>
-<div>
-  <hr>
-  <h2>The games you own already</h2>
-  {{#each games}}
-  {{> game_preview this}}
-  <form action="/delete_game/{{id}}" method="post">
-   <button type='submit'>Delete</button>
+    <input type="text" name="q" id="game-search" placeholder="Search for a game here" />
+    <button type="submit">Start the search!</button>
   </form>
+</div>
+
+<hr>
+
+<h2 id='my_games_title'>My Games</h2>
+<div class='my_games_grid'>
+  {{#each games}}
+  <div class="my_games_previews">
+    {{> game_preview this}}
+    <form action="/delete_game/{{id}}" method="post">
+      <button type='submit'>Delete</button>
+    </form>
+  </div>
   {{/each}}
 </div>

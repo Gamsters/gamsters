@@ -7,7 +7,7 @@ body {
 :root {
   --border-radius: 5px;
   --box-shadow: 2px 2px 10px;
-  --color: #F57E27;
+  --color: #f57e27;
   --color-accent: #118bee0b;
   --color-bg: #fff;
   --color-bg-secondary: #9f5313;
@@ -16,7 +16,8 @@ body {
   --color-shadow: #9f5313;
   --color-text: #000;
   --color-text-secondary: #999;
-  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   --hover-brightness: 1.2;
   --justify-important: center;
   --justify-normal: left;
@@ -38,22 +39,20 @@ h1 {
 
 .navbar {
   font-size: 20px;
-  background:#9f5313;
+  background: #9f5313;
   border-radius: 25px;
   top: 0;
   left: 0;
   right: 0;
   height: 80px;
-  display:flex;
+  display: flex;
   justify-content: space-around;
   align-content: center;
 }
 
-
-
 form {
   margin: 0 auto;
-  display:flex;
+  display: flex;
   justify-content: space-around;
   align-content: center;
   background-color: #9f5313;
@@ -61,22 +60,18 @@ form {
 
 fieldset {
   font-size: 20px;
-  background:white;
-  
-
+  background: white;
 }
 
 fieldset > legend {
   background-color: #9f5313;
   border-radius: 25px;
   padding: 8px;
-  color:white;
-  
+  color: white;
 }
 
 .generator {
   text-align: center;
-
 }
 
 button {
@@ -85,7 +80,7 @@ button {
   border: 4px solid black;
   background-color: white;
 }
-  // background-color: #F57E27;
+// background-color: #F57E27;
 nav {
   margin-bottom: 3vw;
 }
@@ -104,6 +99,7 @@ nav {
   font-size: 2vw;
   border-radius: 10px;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -114,16 +110,18 @@ nav {
   color: black;
 }
 
-.game_preview_grid {
+.games_preview_grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
 }
 
 .game_card form {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: transparent;
 }
 
 .game_card {
@@ -232,7 +230,7 @@ nav {
 .game_card a {
   color: white;
   text-decoration: underline;
-  width: 10vw
+  width: 10vw;
 }
 
 #game {
@@ -248,14 +246,14 @@ nav {
 }
 // The part for displaying pushyfriend on our index/search page
 .hide-it {
-  display:none;
+  display: none;
 }
 .show-it {
   display: block;
   display: initial;
 }
 .flexcontainer {
-  display:flex;
+  display: flex;
 }
 
 #loading {
@@ -282,15 +280,15 @@ nav {
   }
 }
 .show-game {
-  width:200px;
-  height:200px;
+  width: 200px;
+  height: 200px;
   margin-left: 0;
   margin-bottom: 12px;
 }
 .gamebox {
   display: flex;
-flex-direction: column;
-justify-content: flex-end;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .explore_clickable {
@@ -302,7 +300,7 @@ justify-content: flex-end;
 }
 
 #top20 {
-  background-image: url("/images/top20.jpg");
+  background-image: url('/images/top20.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -311,7 +309,7 @@ justify-content: flex-end;
 }
 
 #hate {
-  background-image: url("/images/love_to_hate.jpg");
+  background-image: url('/images/love_to_hate.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -320,7 +318,7 @@ justify-content: flex-end;
 }
 
 #talk {
-  background-image: url("/images/talking_about.jpg");
+  background-image: url('/images/talking_about.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -329,7 +327,7 @@ justify-content: flex-end;
 }
 
 #single {
-  background-image: url("/images/single_player.jpg");
+  background-image: url('/images/single_player.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -338,17 +336,17 @@ justify-content: flex-end;
 }
 
 #scary {
-  background-image: url("/images/scary.jpg");
+  background-image: url('/images/scary.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
   text-align: center;
-  color: black
+  color: black;
 }
 
 #ironhack {
-  background-image: url("/images/ironhack.jpg");
+  background-image: url('/images/ironhack.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -365,4 +363,55 @@ justify-content: flex-end;
 
 .header-explore {
   text-align: center;
+}
+
+#my_games_title {
+  display: flex;
+  justify-content: center;
+}
+
+.my_games_grid form {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+  width: 10vw;
+  margin: 0;
+  padding: 0;
+}
+.my_games_grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.my_games_previews {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+  margin: 2vw;
+  padding: 2vw;
+}
+.my_search_bar form {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#game_search {
+  width: 40vw
+}
+
+.my_search_bar input, select, textarea {
+  margin: 0 1vw;
+  width: 20vw
+}
+
+.ironhacker_name {
+  color: #9e531d;
+  padding: 1.5vw;
 }
