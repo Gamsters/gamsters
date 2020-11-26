@@ -16,7 +16,6 @@
 <div>
   <hr>
   <h2>The games you own already</h2>
-  <p>There will be some different background color here</p>
   {{#each games}}
   {{> game_preview this}}
   <form action="/delete_game/{{id}}" method="post">

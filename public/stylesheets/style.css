@@ -175,4 +175,69 @@ nav {
   flex-direction: column;
   justify-content: flex-end; }
 
+.explore_clickable {
+  width: 25vw;
+  height: 25vw;
+  color: white;
+  margin: 1vw;
+  text-decoration: none; }
+
+#top20 {
+  background-image: url("/images/top20.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  text-align: center; }
+
+#hate {
+  background-image: url("/images/love_to_hate.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  text-align: center; }
+
+#talk {
+  background-image: url("/images/talking_about.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  text-align: center; }
+
+#single {
+  background-image: url("/images/single_player.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  text-align: center; }
+
+#scary {
+  background-image: url("/images/scary.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: black; }
+
+#ironhack {
+  background-image: url("/images/ironhack.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; }
+
+.explore_grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+
+.header-explore {
+  text-align: center; }
+
 /*# sourceMappingURL=style.css.map */
