@@ -1,8 +1,9 @@
 <div class="game_card">
   <img src="{{images.medium}}" alt="Cover picture of {{name}}">
   <h2>{{name}}</h2>
+  <div class="details_buttons">
   {{#if owned}}
-  <form class="delete_button" action="/delete_game/{{../user._id}}" method="post">
+  <form class="delete_button" action="/delete_game/{{id}}" method="post">
     <button type='submit'>Delete from my games</button>
   </form>
   {{else}}
@@ -10,6 +11,7 @@
     <button type="submit">Add to my games</button>
   </form>
   {{/if}}
+  </div>
   <p>Time: {{min_playtime}}-{{max_playtime}}</p>
   <p>Players: {{min_players}}-{{max_players}}</p>
   <p>Minimum age: {{min_age}}</p>

@@ -42,7 +42,11 @@ body {
   color: red;
 }
 
-// .game_card {
-//   display: flex;
-//   fe
-// }
+.game_card {
+  display: flex;
+  flex-direction: column;
+}
+
+.delete_button {
+  background-color: red;
+}

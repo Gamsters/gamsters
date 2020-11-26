@@ -130,7 +130,7 @@ router.post('/delete_game/:id', (req, res) => {
   User.findByIdAndUpdate(req.user.id, {
     $pull: {
       games: {
-        _id: req.params.id,
+        id: req.params.id,
       },
     },
   })
