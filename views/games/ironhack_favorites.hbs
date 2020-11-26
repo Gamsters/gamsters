@@ -1,15 +1,19 @@
-<h1>Ironhack Favorites</h1>
+<h1>Ironhacker Favorites</h1>
 
-<div class="game_preview_grid">
-{{!-- <h2>Top 10</h2> --}}
-{{#each games}}
-{{ironhacker}}'s Favorite Game: 
-  {{> game_preview this}}
-{{!-- {{#if ../user}}
+<div class="games_preview_grid">
+  {{!-- <h2>Top 10</h2> --}}
+  {{#each games}}
+  <a href="/game_details/{{id}}">
+    <div class="game_preview" class="ironhacker_cards">
+      <span class="ironhacker_name">{{ironhacker}}</span>
+      <img src="{{image_url}}" alt="Box-image of {{name}}" id='my-games-images'>
+    </div>
+  </a>
+  {{!-- {{#if ../user}}
 <form action="/add_game/{{id}}" method="post">
   <button type="submit">Add to my games</button>
 </form>
 {{/if}} --}}
 
-{{/each}}
+  {{/each}}
 </div>
