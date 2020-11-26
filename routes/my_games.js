@@ -49,7 +49,9 @@ router.get('/game_details/:id', async (req, res) => {
     `https://www.boardgameatlas.com/api/search?ids=${clickedGameId}&client_id=JLBr5npPhV`
   );
 
-  gameResponse.data.games[0].average_user_rating = gameResponse.data.games[0].average_user_rating.toFixed(2);
+  gameResponse.data.games[0].average_user_rating = gameResponse.data.games[0].average_user_rating.toFixed(
+    2
+  );
   // console.log('game response ', gameResponse.data.games[0]);
   let videoResponse = await axios.get(
     `https://www.boardgameatlas.com/api/game/videos?game_id=${clickedGameId}&client_id=JLBr5npPhV`
@@ -59,20 +61,25 @@ router.get('/game_details/:id', async (req, res) => {
   // console.log('user data: ', loggedInUser.games);
   if (videoResponse.data.videos[0]) {
     gameResponse.data.games[0].video = videoResponse.data.videos[0].url;
-  } 
-  const userGames = loggedInUser.games
-  for(let i = 0; i <userGames.length ; i++) { 
-    if(req.params.id === userGames[i].id) {
-      gameResponse.data.games[0].owned = true
+  }
+  if (loggedInUser) {
+    const userGames = loggedInUser.games;
+    for (let i = 0; i < userGames.length; i++) {
+      if (req.params.id === userGames[i].id) {
+        gameResponse.data.games[0].owned = true;
+      }
     }
   }
+
   // console.log('game id of ', gameResponse.data.games[0].name, ':', gameResponse.data.games[0].id );
-  res.render('games/game_details', {
-    game: gameResponse.data.games,
-    user: loggedInUser,
-  }).catch((err) => {
-    console.log(err);
-  });
+  res
+    .render('games/game_details', {
+      game: gameResponse.data.games,
+      user: loggedInUser,
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 });
 
 router.post('/add_game/:id', (req, res) => {

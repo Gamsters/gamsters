@@ -1,15 +1,15 @@
 <h1>Games people are talking about this week</h1>
 
-<div>
+<div class="game_preview_grid">
 {{!-- <h2>Top 10</h2> --}}
 {{#each games}}
   {{> game_preview this}}
-
+{{!-- 
 {{#if ../user}}
 <form action="/add_game/{{id}}" method="post">
   <button type="submit">Add to my games</button>
 </form>
-{{/if}}
+{{/if}} --}}
 
 {{/each}}
 </div>

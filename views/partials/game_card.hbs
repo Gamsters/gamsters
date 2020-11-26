@@ -2,7 +2,10 @@
   <h2>{{name}}</h2>
   <img src="{{images.medium}}" alt="Cover picture of {{name}}">
 {{#if owned}}
-<p>This game is in your games</p>
+{{!--  --}}
+<form action="/delete_game/{{../user._id}}" method="post">
+   <button type='submit'>Delete from my games</button>
+  </form>
 {{else}}
 <form action="/add_game/{{id}}" method="post">
   <button type="submit">Add to my games</button>
@@ -15,7 +18,6 @@
   <p>Price: ${{price}}</p>
   <p>Average user rating: {{average_user_rating}}</p>
   <p>Number of user ratings: {{num_user_ratings}}</p>
-  <p>Rank: {{rank}}</p>
   {{#if video}}
   <a href="{{video}}">Click here to watch video</a>
   {{/if}}
