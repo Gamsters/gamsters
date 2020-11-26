@@ -1,6 +1,13 @@
 <div class="game_card">
   <h2>{{name}}</h2>
   <img src="{{images.medium}}" alt="Cover picture of {{name}}">
+{{#if owned}}
+<p>This game is in your games</p>
+{{else}}
+<form action="/add_game/{{id}}" method="post">
+  <button type="submit">Add to my games</button>
+</form>
+{{/if}}
   <p>Time: {{min_playtime}}-{{max_playtime}}</p>
   <p>Players: {{min_players}}-{{max_players}}</p>
   <p>Minimum age: {{min_age}}</p>
