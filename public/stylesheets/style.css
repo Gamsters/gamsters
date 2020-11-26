@@ -1,6 +1,10 @@
 body {
   padding: 50px;
+  margin: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+
+nav {
+  margin-bottom: 3vw; }
 
 #my-games-images {
   width: 20vw; }
@@ -27,6 +31,29 @@ body {
   flex-wrap: wrap;
   justify-content: center; }
 
+.game_card form {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.game_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.game_card div {
+  background-color: gray;
+  border-radius: 5px; }
+
+.game_card p {
+  padding: 0;
+  margin: 0; }
+
+.title_pic {
+  text-align: center;
+  padding: 3vw; }
+
 .delete_button {
   border: inherit;
   box-shadow: none; }
@@ -34,11 +61,68 @@ body {
 .test {
   color: red; }
 
-.game_card {
-  display: flex;
-  flex-direction: column; }
+.game_card img {
+  width: 30vw; }
+
+.description {
+  padding: 2vw;
+  margin: 1vw 3vw; }
 
 .delete_button {
   background-color: red; }
+
+.game_card form {
+  border: inherit;
+  box-shadow: none;
+  padding: 0;
+  background-color: none; }
+
+.time_players_age_price_subDiv {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.time_players_age_price {
+  display: flex;
+  margin: 0;
+  padding: 0; }
+
+.time_players_age_price p {
+  padding: 1vw; }
+
+.ratings h2 {
+  margin: 0; }
+
+.ratings {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 2vw;
+  justify-content: center;
+  align-items: center; }
+
+.ratings_video {
+  display: flex;
+  align-items: center;
+  margin: 1vw 3vw; }
+
+.details_buttons form {
+  display: flex;
+  justify-content: center;
+  background-color: none; }
+
+.details_video {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2vw;
+  margin: 1vw 3vw; }
+
+.game_card h2 {
+  font-size: 3vw; }
 
 /*# sourceMappingURL=style.css.map */
