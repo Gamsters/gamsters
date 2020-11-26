@@ -1,4 +1,16 @@
-<h1>...pick a game already!</h1>
+<script>
+  function generateOneGame () {
+  document.getElementById('generate-game-btn').addEventListener('click', () => {
+
+  const time = document.getElementById('time').value;
+  console.log(time)
+
+  // getCountryInfo(userInput);
+
+})   
+  }
+ </script>
+ <h1>...pick a game already!</h1>
 <form action="/game_details" method='GET'>
 
    <fieldset>
@@ -64,16 +76,23 @@
 
     
     <button type='button'>Search for a game!</button>
-
-
-
-
    
 </form>
 
 <div id='game'>
-<h2></h2>
-<a href='' id='details'><img src='' id='loading'></a>
+<img src='' id='loading'>
+
+<div id="pushhamster" class="hide-it">
+  <div  id="hamster" class="flexcontainer">
+    <img class="pushyfriend" src="images/pushyfriend.png" >
+    <div class="gamebox">
+      <a href="" class="details-link" id="details-link"><img src="" id="show-game" class="show-game" alt="">
+  </a></div>
+  </div>
+</div>
+
+
+<a href='' id='details'></a>
 </div>
 
 
@@ -113,9 +132,16 @@ document.querySelector('button').onclick = (event) => {
     axios.get(url)
     .then((response) => {
 
-      document.getElementById('loading').src = `${response.data.games[0].image_url}`;
+      document.getElementById('loading').className = 'hide-it';
+      document.getElementById('pushhamster').className = 'show-it';
+      document.getElementById("hamster").classList.add('hamster');
+      document.getElementById('show-game').src = `${response.data.games[0].image_url}`;
+      document.getElementById('details-link').href = `/game_details/${response.data.games[0].id}`;
+  
+
+      {{!-- document.getElementById('loading').src = `${response.data.games[0].image_url}`;
       document.getElementById('details').href = `/game_details/${response.data.games[0].id}`;
-      {{!-- document.getElementById('game').innerHTML = `${response.data.games[0].name}`; --}}
+      document.getElementById('game').innerHTML = `${response.data.games[0].name}`; --}}
   
     })
     event.preventDefault()
@@ -126,4 +152,3 @@ document.querySelector('button').onclick = (event) => {
 
 
 </script>
-

@@ -10,3 +10,45 @@ a {
 #my-games-images {
   width: 10vw
 }
+// The part for displaying pushyfriend on our index/search page
+.hide-it {
+  display:none;
+}
+.show-it {
+  display: block;
+  display: initial;
+}
+.flexcontainer {
+  display:flex;
+}
+
+.hamster {
+  position: absolute;
+  animation: moveToLeft 3s ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: 0;
+}
+.pushyfriend {
+  width: 250px;
+  height: 250px;
+}
+
+@keyframes moveToLeft {
+  0% {
+    left: -50%;
+  }
+  100% {
+    left: calc(50% - 200px);
+  }
+}
+.show-game {
+  width:200px;
+  height:200px;
+  margin-left: 0;
+  margin-bottom: 12px;
+}
+.gamebox {
+  display: flex;
+flex-direction: column;
+justify-content: flex-end;
+}
