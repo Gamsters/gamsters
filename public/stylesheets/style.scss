@@ -1,7 +1,7 @@
 body {
   padding: 50px;
   margin: 0;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
 nav {
@@ -13,7 +13,7 @@ nav {
 }
 
 .game_preview {
-  background-color: gray;
+  background-color: white;
   width: 25vw;
   height: 35vw;
   margin: 2vw;
@@ -32,14 +32,14 @@ nav {
   color: black;
 }
 
-.game_preview_grid{
+.game_preview_grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .game_card form {
-  display: flex; 
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -51,18 +51,24 @@ nav {
   align-items: center;
 }
 
+.title_pic {
+  text-align: center;
+  padding: 3vw;
+  background-color: white !important;
+}
+
+.title_pic h1 {
+  color: #9e531d;
+}
+
 .game_card div {
-  background-color: gray;
-  border-radius: 5px
+  background-color: #9e531d;
+  border-radius: 5px;
+  color: white;
 }
 .game_card p {
   padding: 0;
-  margin: 0
-}
-
-.title_pic {
-  text-align: center;
-  padding: 3vw
+  margin: 0;
 }
 
 .delete_button {
@@ -84,7 +90,11 @@ nav {
 }
 
 .delete_button {
-  background-color: red;
+  background-color: #f57e27;
+}
+
+.add_button {
+  background-color: #f57e27;
 }
 
 .game_card form {
@@ -108,12 +118,12 @@ nav {
   margin: 0;
   padding: 0;
 }
-.time_players_age_price p{
-  padding: 1vw
+.time_players_age_price p {
+  padding: 1vw;
 }
 
 .ratings h2 {
-  margin: 0
+  margin: 0;
 }
 
 .ratings {
@@ -148,4 +158,9 @@ nav {
 
 .game_card h2 {
   font-size: 3vw;
+}
+
+.game_card a {
+  color: white;
+  text-decoration: underline;
 }
