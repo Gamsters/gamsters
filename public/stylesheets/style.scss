@@ -4,6 +4,88 @@ body {
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
+:root {
+  --border-radius: 5px;
+  --box-shadow: 2px 2px 10px;
+  --color: #F57E27;
+  --color-accent: #118bee0b;
+  --color-bg: #fff;
+  --color-bg-secondary: #9f5313;
+  --color-secondary: #920de9;
+  --color-secondary-accent: #920de90b;
+  --color-shadow: #9f5313;
+  --color-text: #000;
+  --color-text-secondary: #999;
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  --hover-brightness: 1.2;
+  --justify-important: center;
+  --justify-normal: left;
+  --line-height: 150%;
+  --width-card: 285px;
+  --width-card-medium: 460px;
+  --width-card-wide: 800px;
+  --width-content: 1080px;
+}
+
+a {
+  color: #ffffff;
+}
+
+h1 {
+  color: #ffffff;
+  text-align: center;
+}
+
+.navbar {
+  font-size: 20px;
+  background:#9f5313;
+  border-radius: 25px;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  display:flex;
+  justify-content: space-around;
+  align-content: center;
+}
+
+
+
+form {
+  margin: 0 auto;
+  display:flex;
+  justify-content: space-around;
+  align-content: center;
+  background-color: #9f5313;
+}
+
+fieldset {
+  font-size: 20px;
+  background:white;
+  
+
+}
+
+fieldset > legend {
+  background-color: #9f5313;
+  border-radius: 25px;
+  padding: 8px;
+  color:white;
+  
+}
+
+.generator {
+  text-align: center;
+
+}
+
+button {
+  color: #9f5313;
+  border-radius: 25px;
+  border: 4px solid black;
+  background-color: white;
+}
+  // background-color: #F57E27;
 nav {
   margin-bottom: 3vw;
 }
@@ -71,30 +153,17 @@ nav {
   margin: 0;
 }
 
-.delete_button {
-  border: inherit;
-  box-shadow: none;
-}
-
-.test {
-  color: red;
-}
-
 .game_card img {
   width: 30vw;
+}
+
+.button_form {
+  background-color: transparent;
 }
 
 .description {
   padding: 2vw;
   margin: 1vw 3vw;
-}
-
-.delete_button {
-  background-color: #f57e27;
-}
-
-.add_button {
-  background-color: #f57e27;
 }
 
 .game_card form {
@@ -165,6 +234,18 @@ nav {
   text-decoration: underline;
   width: 10vw
 }
+
+#game {
+  display: block;
+  text-align: center;
+}
+
+.loadingPic {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
 // The part for displaying pushyfriend on our index/search page
 .hide-it {
   display:none;
@@ -177,9 +258,13 @@ nav {
   display:flex;
 }
 
+#loading {
+  height: 250px;
+}
+
 .hamster {
   position: absolute;
-  animation: moveToLeft 3s ease-out;
+  animation: moveToLeft 2.5s ease-out;
   animation-fill-mode: forwards;
   animation-delay: 0;
 }
