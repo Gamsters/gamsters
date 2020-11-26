@@ -59,7 +59,7 @@ router.get('/game_details/:id', async (req, res) => {
   if (videoResponse.data.videos[0]) {
     gameResponse.data.games[0].video = videoResponse.data.videos[0].url;
   } 
-  
+  // console.log('game id of ', gameResponse.data.games[0].name, ':', gameResponse.data.games[0].id );
   res.render('games/game_details', {
     game: gameResponse.data.games,
     user: loggedInUser,
