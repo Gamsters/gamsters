@@ -10,7 +10,7 @@
     <button class="delete_button" type='submit'>Delete from my games</button>
   </form>
   {{else}}
-  <form action="/add_game/{{id}}" method="post">
+  <form action="/add_game/{{id}}" method="post" class='button_form'>
     <button class="add_button" type="submit">Add to my games</button>
   </form>
   {{/if}}
