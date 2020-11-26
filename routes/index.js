@@ -43,6 +43,7 @@ router.get('/', (req, res, next) => {
 
 // filter by time
 router.get('/game_details', (req, res) => {
+  const loggedInUser = req.user;
   let url = 'https://api.boardgameatlas.com/api/search?client_id=Bb6pHO9yhc&'
   const time = req.query.time
   const players = req.query.players
@@ -61,7 +62,7 @@ router.get('/game_details', (req, res) => {
     axios.get(url)
     .then(game => {
      console.log(time);
-    res.render('my_games/search_results', {games:game.data.games})
+    res.render('my_games/search_results', {games:game.data.games, user: loggedInUser})
   })
     .catch(err => console.log('Error while searching for game occured.', err));
 })
@@ -69,13 +70,14 @@ router.get('/game_details', (req, res) => {
 // main generator searchedGame
 // right now I only test it for the player# search
 router.get('/game_search_by_name', (req, res) => {
+  const loggedInUser = req.user;
   const searchedGame = req.query.q
     .toLowerCase()
     console.log(searchedGame);
 axios.get(`https://api.boardgameatlas.com/api/search?client_id=Bb6pHO9yhc&fuzzy=true&name=`+searchedGame)
     .then(game => {
      console.log(game);
-    res.render('my_games/search_results', {games:game.data.games})
+    res.render('my_games/search_results', {games:game.data.games, user: loggedInUser})
   })
     .catch(err => console.log('Error while searching for game by name occured: ', err));
 })
