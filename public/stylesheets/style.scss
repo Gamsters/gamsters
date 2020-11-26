@@ -1,6 +1,7 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
 :root {
@@ -83,10 +84,154 @@ button {
   border-radius: 25px;
   border: 4px solid black;
   background-color: white;
+}
   // background-color: #F57E27;
+nav {
+  margin-bottom: 3vw;
 }
 
 #my-games-images {
+  width: 20vw;
+}
+
+.game_preview {
+  background-color: white;
+  width: 25vw;
+  height: 35vw;
+  margin: 2vw;
+  text-align: center;
+  text-decoration: none;
+  font-size: 2vw;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  // flex-wrap: wrap;
+}
+
+.game_preview a {
+  color: black;
+}
+
+.game_preview_grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.game_card form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title_pic {
+  text-align: center;
+  padding: 3vw;
+  background-color: white !important;
+}
+
+.title_pic h1 {
+  color: #9e531d;
+}
+
+.game_card div {
+  background-color: #9e531d;
+  border-radius: 5px;
+  color: white;
+}
+.game_card p {
+  padding: 0;
+  margin: 0;
+}
+
+.game_card img {
+  width: 30vw;
+}
+
+.button_form {
+  background-color: transparent;
+}
+
+.description {
+  padding: 2vw;
+  margin: 1vw 3vw;
+}
+
+.game_card form {
+  border: inherit;
+  box-shadow: none;
+  padding: 0;
+  background-color: none;
+}
+
+.time_players_age_price_subDiv {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.time_players_age_price {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.time_players_age_price p {
+  padding: 1vw;
+}
+
+.ratings h2 {
+  margin: 0;
+}
+
+.ratings {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 2vw;
+  justify-content: center;
+  align-items: center;
+}
+
+.ratings_video {
+  display: flex;
+  align-items: center;
+  margin: 1vw 3vw;
+}
+
+.details_buttons form {
+  display: flex;
+  justify-content: center;
+  background-color: none;
+}
+
+.details_video {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2vw;
+  margin: 1vw 3vw;
+}
+
+.game_card h2 {
+  font-size: 3vw;
+}
+
+.game_card a {
+  color: white;
+  text-decoration: underline;
   width: 10vw
 }
 
@@ -101,3 +246,50 @@ button {
   margin-right: auto;
   text-align: left;
 }
+// The part for displaying pushyfriend on our index/search page
+.hide-it {
+  display:none;
+}
+.show-it {
+  display: block;
+  display: initial;
+}
+.flexcontainer {
+  display:flex;
+}
+
+#loading {
+  height: 250px;
+}
+
+.hamster {
+  position: absolute;
+  animation: moveToLeft 2.5s ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: 0;
+}
+.pushyfriend {
+  width: 250px;
+  height: 250px;
+}
+
+@keyframes moveToLeft {
+  0% {
+    left: -50%;
+  }
+  100% {
+    left: calc(50% - 200px);
+  }
+}
+.show-game {
+  width:200px;
+  height:200px;
+  margin-left: 0;
+  margin-bottom: 12px;
+}
+.gamebox {
+  display: flex;
+flex-direction: column;
+justify-content: flex-end;
+}
+

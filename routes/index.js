@@ -2,6 +2,7 @@ const express = require('express');
 const router  = express.Router();
 const axios = require('axios');
 
+
 /* GET home page */
 router.get('/', (req, res, next) => {
   const loggedInUser = req.user;
@@ -21,8 +22,8 @@ router.get('/game_details', (req, res) => {
     if (time) {
       url += time;
     }
-    if (players) {
-      url += players;
+    if (player) {
+      url += player;
     }
     if (age) {
       url += age;

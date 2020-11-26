@@ -1,12 +1,14 @@
 <h1>This is the search result for the game search by name</h1>
-{{#each games}}
-  {{> game_preview this}}
+<div class='test'>
+  <div class='games_preview_grid'>
+    {{#each games}}
+    {{> game_preview this}}
 
-{{#if ../user}}
+    {{!-- {{#if ../user}}
 <form action="/add_game/{{id}}" method="post">
   <button type="submit">Add to my games</button>
 </form>
-{{/if}}
-
-{{/each}}
-
+{{/if}} --}}
+    {{/each}}
+  </div>
+</div>
