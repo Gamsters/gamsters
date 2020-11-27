@@ -64,13 +64,7 @@
 
   
 </form>
-<br>
-<br>
-    <div class='generator'>
-    <button class='generatorButton'>Search for a game!</button>
-    </div>
-    
-</div>
+
 
 <div id='game'>
 <img src='' class='hide-it' id='loading' alt='it´s loading'>
@@ -88,7 +82,13 @@
 <a href='' id='details'></a>
 </div>
 
-
+<br>
+<br>
+    <div class='generator' id='generator_button'>
+    <button class='generatorButton'>Bring me a game!</button>
+    </div>
+    
+</div>
 
 <script>
 document.querySelector('button').onclick = (event) => {
@@ -130,6 +130,7 @@ document.querySelector('button').onclick = (event) => {
       {{!-- document.getElementById('loading').src = `${response.data.games[random].images.medium}`;
       document.getElementById('details').href = `/game_details/${response.data.games[random].id}`; --}}
       {{!-- document.getElementById('game').innerHTML = `${response.data.games[0].name}`; --}}
+      document.getElementById("generator_button").classList.add('move_button');
       document.getElementById('loading').className = 'hide-it';
       document.getElementById('pushhamster').className = 'show-it';
       document.getElementById("hamster").classList.add('hamster');

@@ -75,22 +75,32 @@ nav {
   margin-bottom: 3vw; }
 
 #my-games-images {
-  width: 20vw; }
+  width: 12vw;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
 .game_preview {
   background-color: white;
-  width: 25vw;
-  height: 35vw;
+  width: 17vw;
+  height: 28vw;
   margin: 2vw;
   text-align: center;
   text-decoration: none;
   font-size: 2vw;
   border-radius: 10px;
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
-  justify-content: center; }
+  justify-content: space-between; }
+
+.left_hamsters img {
+  width: 2vw; }
+
+.left_hamsters {
+  display: flex;
+  justify-content: space-between;
+  width: 100%; }
 
 .game_preview a {
   color: black; }
@@ -224,7 +234,7 @@ nav {
 
 .hamster {
   position: absolute;
-  animation: moveToLeft 2.5s ease-out;
+  animation: moveToLeft 3.5s ease-out;
   animation-fill-mode: forwards;
   animation-delay: 0; }
 
@@ -254,62 +264,42 @@ nav {
   height: 25vw;
   color: white;
   margin: 1vw;
-  text-decoration: none; }
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  text-align: center; }
 
 #top20 {
-  background-image: url("/images/top20.jpg");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  text-align: center; }
+  background-image: url("/images/top20.jpg"); }
 
 #hate {
-  background-image: url("/images/love_to_hate.jpg");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  text-align: center; }
+  background-image: url("/images/love_to_hate.jpg"); }
 
 #talk {
-  background-image: url("/images/talking_about.jpg");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  text-align: center; }
+  background-image: url("/images/talking_about.jpg"); }
 
 #single {
-  background-image: url("/images/single_player.jpg");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  text-align: center; }
+  background-image: url("/images/single_player.jpg"); }
 
 #scary {
   background-image: url("/images/scary.jpg");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  text-align: center;
   color: black; }
 
 #ironhack {
-  background-image: url("/images/ironhack.jpg");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center; }
+  background-image: url("/images/ironhack.jpg"); }
 
 .explore_grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; }
+  justify-content: center;
+  align-items: center; }
+
+.explore_grid h2 {
+  text-align: center; }
 
 .header-explore {
   text-align: center; }
@@ -355,5 +345,15 @@ nav {
 .ironhacker_name {
   color: #9e531d;
   padding: 1.5vw; }
+
+.move_button {
+  position: relative;
+  top: 230px; }
+
+.google-button {
+  border: 2px solid white;
+  height: 4.1vw;
+  display: flex;
+  align-items: center; }
 
 /*# sourceMappingURL=style.css.map */

@@ -17,6 +17,12 @@
     {{/if}}
   {{/unless}}
 
+  {{#if noUser}}
+  <form action="/login" method="get">
+        <button class="delete_button" type='submit'>Login to add to my games</button>
+     </form>
+  {{/if}}
+
   <div class="ratings_video">
     <div class="ratings">
       <span>
