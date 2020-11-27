@@ -4,16 +4,16 @@
    <fieldset>
     <legend>Time</legend>
 
-    <input type="radio" id="20min" name="time" value="lt_max_playtime=20">
+    <input type="radio" id="20min" name="time" value="lt_min_playtime=20">
     <label for='20min'>Up to 20 min</label><br/>
 
-    <input type="radio" id='20min1hour' name="time" value="gt_min_playtime=19&.lt_max_playtime=61">
+    <input type="radio" id='20min1hour' name="time" value="gt_min_playtime=19&.lt_min_playtime=61">
     <label for='20min1hour'>20min &mdash; 1 hour</label><br/>
 
-    <input type="radio" id='1hour2hours'name="time" value="gt_min_playtime=59&.lt_max_playtime=181">
+    <input type="radio" id='1hour2hours'name="time" value="gt_min_playtime=59&.lt_min_playtime=181">
     <label for='1hour2hours'>1 hour &mdash; 3 hours</label><br/>
 
-    <input type="radio" id='2hours4hours' name="time" value ="gt_min_playtime=179">
+    <input type="radio" id='2hours4hours' name="time" value ="gt_max_playtime=179">
     <label for='2hours4hours'>More than 3 hours</label><br/>
 
     {{!-- <input type="radio" id='allnight' name="time" value ="min_playtime=240">
@@ -25,16 +25,16 @@
   <fieldset>
     <legend>Number of players</legend>
 
-    <input type="radio" id="oneplayer" name="playerNum" value="min_players=1">
+    <input type="radio" id="oneplayer" name="playerNum" value="max_players=1">
     <label for="oneplayer">1</label><br/>
 
-    <input type="radio" id="onetwoplayer" name="playerNum" value='gt_min_players=0&.lt_max_players=3'>
+    <input type="radio" id="onetwoplayer" name="playerNum" value='gt_max_players=0&.lt_max_players=3'>
     <label for="onetwoplayer">1 &mdash; 2</label><br/>
 
-    <input type="radio" id="twofiveplayer" name="playerNum" value='gt_min_players=2&.lt_max_players=6'>
+    <input type="radio" id="twofiveplayer" name="playerNum" value='gt_max_players=2&.lt_max_players=6'>
     <label for="twofiveplayer">2 &mdash; 5</label><br/>
 
-    <input type="radio" id="fiveplayer" name="playerNum" value ="gt_min_players=4">
+    <input type="radio" id="fiveplayer" name="playerNum" value ="gt_max_players=5">
     <label for="fiveplayer">5 and more</label>
   </fieldset>
 
@@ -98,16 +98,16 @@ document.querySelector('button').onclick = (event) => {
         console.log(fieldSetTime[i])
         if(fieldSetTime[i].checked == true)
         {
-            let bugfix = fieldSetTime[i].value.replace('.', '')
-            url= url + "&" + bugfix;
+            let bugfixTime = fieldSetTime[i].value.replace('.', '')
+            url= url + "&" + bugfixTime;
         }
     }
     let fieldSetPlayers = document.getElementsByName("playerNum");
     for(var i = 0; i < fieldSetPlayers.length; i++) {
         if(fieldSetPlayers[i].checked == true)
         {
-            let bugfix = fieldSetTime[i].value.replace('.', '')
-            url= url + "&" + bugfix;
+            let bugfixPlayer = fieldSetPlayers[i].value.replace('.', '')
+            url= url + "&" + bugfixPlayer;
         }
     }
 
