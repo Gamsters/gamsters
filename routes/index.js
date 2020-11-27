@@ -16,7 +16,6 @@ router.get('/game_details', (req, res) => {
   let url = 'https://api.boardgameatlas.com/api/search?client_id=Bb6pHO9yhc&'
   const time = req.query.time
   const players = req.query.players
-  const age = req.query.age   
 
     console.log(time);
     if (time) {
@@ -25,9 +24,8 @@ router.get('/game_details', (req, res) => {
     if (player) {
       url += player;
     }
-    if (age) {
-      url += age;
-    }
+    console.log(url);
+
     axios.get(url)
     .then(game => {
      console.log(time);
