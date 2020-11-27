@@ -299,7 +299,9 @@ nav {
   align-items: center; }
 
 .explore_grid h2 {
-  text-align: center; }
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: inline; }
 
 .header-explore {
   text-align: center; }
@@ -338,7 +340,9 @@ nav {
 #game_search {
   width: 40vw; }
 
-.my_search_bar input, select, textarea {
+.my_search_bar input,
+select,
+textarea {
   margin: 0 1vw;
   width: 20vw; }
 
@@ -355,5 +359,20 @@ nav {
   height: 4.1vw;
   display: flex;
   align-items: center; }
+
+.google-button img {
+  width: 4vw; }
+
+.auth-page h2 {
+  color: white; }
+
+.auth-page form {
+  display: flex;
+  align-items: center; }
+
+.local_auth_form {
+  display: flex;
+  flex-direction: column;
+  align-content: center; }
 
 /*# sourceMappingURL=style.css.map */

@@ -103,20 +103,20 @@ nav {
   font-size: 2vw;
   border-radius: 10px;
   display: flex;
-//   flex-wrap: wrap;
+  //   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-// //   // flex-wrap: wrap;
+  // //   // flex-wrap: wrap;
 }
 
 .left_hamsters img {
-  width: 2vw
+  width: 2vw;
 }
 .left_hamsters {
   display: flex;
   justify-content: space-between;
-  width: 100%
+  width: 100%;
 }
 
 .game_preview a {
@@ -353,6 +353,8 @@ nav {
 
 .explore_grid h2 {
   text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: inline;
 }
 
 .header-explore {
@@ -397,12 +399,14 @@ nav {
 }
 
 #game_search {
-  width: 40vw
+  width: 40vw;
 }
 
-.my_search_bar input, select, textarea {
+.my_search_bar input,
+select,
+textarea {
   margin: 0 1vw;
-  width: 20vw
+  width: 20vw;
 }
 
 .ironhacker_name {
@@ -420,4 +424,23 @@ nav {
   height: 4.1vw;
   display: flex;
   align-items: center;
+}
+
+.google-button img {
+  width: 4vw;
+}
+
+.auth-page h2 {
+  color: white;
+}
+
+.auth-page form {
+  display: flex;
+  align-items: center;
+}
+
+.local_auth_form {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
 }
