@@ -299,7 +299,9 @@ nav {
   align-items: center; }
 
 .explore_grid h2 {
-  text-align: center; }
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: inline; }
 
 .header-explore {
   text-align: center; }
@@ -338,7 +340,9 @@ nav {
 #game_search {
   width: 40vw; }
 
-.my_search_bar input, select, textarea {
+.my_search_bar input,
+select,
+textarea {
   margin: 0 1vw;
   width: 20vw; }
 
