@@ -356,4 +356,19 @@ nav {
   display: flex;
   align-items: center; }
 
+.google-button img {
+  width: 4vw; }
+
+.auth-page h2 {
+  color: white; }
+
+.auth-page form {
+  display: flex;
+  align-items: center; }
+
+.local_auth_form {
+  display: flex;
+  flex-direction: column;
+  align-content: center; }
+
 /*# sourceMappingURL=style.css.map */
