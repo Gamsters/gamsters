@@ -86,7 +86,7 @@ nav {
 }
 
 #my-games-images {
-  width: 20vw;
+  width: 12vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -94,10 +94,10 @@ nav {
 
 .game_preview {
   background-color: white;
-  width: 25vw;
-  height: 35vw;
+  width: 17vw;
+  height: 28vw;
   margin: 2vw;
-  padding: 2vw;
+  // padding: 2vw;
   text-align: center;
   text-decoration: none;
   font-size: 2vw;
@@ -111,7 +111,7 @@ nav {
 }
 
 .left_hamsters img {
-  width: 3vw
+  width: 2vw
 }
 .left_hamsters {
   display: flex;
@@ -275,7 +275,7 @@ nav {
 
 .hamster {
   position: absolute;
-  animation: moveToLeft 2.5s ease-out;
+  animation: moveToLeft 3.5s ease-out;
   animation-fill-mode: forwards;
   animation-delay: 0;
 }
@@ -427,5 +427,10 @@ nav {
 .ironhacker_name {
   color: #9e531d;
   padding: 1.5vw;
+}
+
+.move_button {
+  position: relative;
+  top: 230px;
 }
 
