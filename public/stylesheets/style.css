@@ -75,22 +75,33 @@ nav {
   margin-bottom: 3vw; }
 
 #my-games-images {
-  width: 20vw; }
+  width: 20vw;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
 .game_preview {
   background-color: white;
   width: 25vw;
   height: 35vw;
   margin: 2vw;
+  padding: 2vw;
   text-align: center;
   text-decoration: none;
   font-size: 2vw;
   border-radius: 10px;
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
-  justify-content: center; }
+  justify-content: space-between; }
+
+.left_hamsters img {
+  width: 3vw; }
+
+.left_hamsters {
+  display: flex;
+  justify-content: space-between;
+  width: 100%; }
 
 .game_preview a {
   color: black; }

@@ -87,6 +87,9 @@ nav {
 
 #my-games-images {
   width: 20vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .game_preview {
@@ -94,16 +97,26 @@ nav {
   width: 25vw;
   height: 35vw;
   margin: 2vw;
+  padding: 2vw;
   text-align: center;
   text-decoration: none;
   font-size: 2vw;
   border-radius: 10px;
   display: flex;
-  flex-wrap: wrap;
+//   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  // flex-wrap: wrap;
+  justify-content: space-between;
+// //   // flex-wrap: wrap;
+}
+
+.left_hamsters img {
+  width: 3vw
+}
+.left_hamsters {
+  display: flex;
+  justify-content: space-between;
+  width: 100%
 }
 
 .game_preview a {
@@ -415,3 +428,4 @@ nav {
   color: #9e531d;
   padding: 1.5vw;
 }
+
