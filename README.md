@@ -12,14 +12,18 @@ Receive a randomized board game reccomendation based on input filters. After sig
 
 - Once you have opened the project inside the text editor of your choice, create a <b>.env</b> file on the root.
   Inside of this file, you will need to add the following:
-
+  ```shell
   - PORT=3000
   - ENV=development
   - SESSION_SECRET= ///Here you can add any word of your choice///
+  ```
 
   In case you want to use the google login, you will need to add and fill the following fields. You can find more information   on how to do so here https://developers.google.com/adwords/api/docs/guides/authentication
+
+  ```shell
   - GOOGLE_CLIENT_ID=
   - GOOGLE_CLIENT_SECRET=
+  ```
 
 - Then, on your terminal, inside the project's folder, run:
 
