@@ -38,13 +38,18 @@ Receive a randomized board game reccomendation based on input filters. After sig
   $ npm run dev
   ```
 
+## Built with
+
+- <a href='https://www.boardgameatlas.com/'>Board Game Atlas API</a>
+
 ## Authors
 
-- Katie Gracey (https://github.com/kgracey93)
-- Jan Völker (https://github.com/jan-webdev)
-- ale rodriguez (https://github.com/prullansky)
+- <a href='https://github.com/kgracey93'>Katie Gracey</a>
+- <a href='https://github.com/jan-webdev'>Jan Völker</a>
+- <a href='https://github.com/prullansky'>ale rodriguez</a>
+
 
 ## Acknowledgments
 
-- Hamster loading gif by Martin Ollivere: https://dribbble.com/shots/4651504-Hamster-Loading-Spinner
-- Cute hamster images adapted from original imagery by AnnaliseArt: https://pixabay.com/illustrations/hamster-rodent-rat-mouse-animal-5369146/
+- Hamster loading gif by <a href='https://dribbble.com/shots/4651504-Hamster-Loading-Spinner'>Martin Ollivere</a>.
+- Cute hamster images adapted from original imagery by <a href='https://pixabay.com/illustrations/hamster-rodent-rat-mouse-animal-5369146/'>AnnaliseArt</a>.
