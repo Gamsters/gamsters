@@ -1,5 +1,9 @@
 # Gamsters
 
+Receive a randomized board game reccomendation based on input filters. After sign-up, the user will be able to add these games to their list, and use a search bar to look for new board games by name.
+
+![Screenshot 2021-01-13 at 13 08 06](https://user-images.githubusercontent.com/42493985/104458006-0d8c5000-55ab-11eb-819b-978f11df5f00.png)
+
 - Working demo: http://gamster.herokuapp.com/
 
 ## Setup
@@ -30,6 +34,13 @@
   $ npm run dev
   ```
 
+## Authors
 
-Hamster loading gif by Martin Ollivere: https://dribbble.com/shots/4651504-Hamster-Loading-Spinner
-Cute hamster images adapted from original imagery by AnnaliseArt: https://pixabay.com/illustrations/hamster-rodent-rat-mouse-animal-5369146/
+- Katie Gracey (https://github.com/kgracey93)
+- njan volker (https://github.com/jan-webdev)
+- ale rodriguez (https://github.com/prullansky)
+
+## Acknowledgments
+
+- Hamster loading gif by Martin Ollivere: https://dribbble.com/shots/4651504-Hamster-Loading-Spinner
+- Cute hamster images adapted from original imagery by AnnaliseArt: https://pixabay.com/illustrations/hamster-rodent-rat-mouse-animal-5369146/
