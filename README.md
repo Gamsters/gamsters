@@ -1,5 +1,7 @@
 # Gamsters
 
+- Working demo: http://gamster.herokuapp.com/
+
 ## Setup
 
 - Clone this repo
