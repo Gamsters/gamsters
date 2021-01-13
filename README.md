@@ -10,14 +10,14 @@ Receive a randomized board game reccomendation based on input filters. After sig
 
 - Clone this repo
 
-- Once you have opened the project inside the text editor of your choice, create a .env file on the root.
+- Once you have opened the project inside the text editor of your choice, create a <b>.env</b> file on the root.
   Inside of this file, you will need to add the following:
 
   - PORT=3000
   - ENV=development
   - SESSION_SECRET= ///Here you can add any word of your choice///
 
-  In case you want to use the google login, you will need to add and fill the followinf fields. You can find more information   on how to do so here https://developers.google.com/adwords/api/docs/guides/authentication
+  In case you want to use the google login, you will need to add and fill the following fields. You can find more information   on how to do so here https://developers.google.com/adwords/api/docs/guides/authentication
   - GOOGLE_CLIENT_ID=
   - GOOGLE_CLIENT_SECRET=
 
@@ -37,7 +37,7 @@ Receive a randomized board game reccomendation based on input filters. After sig
 ## Authors
 
 - Katie Gracey (https://github.com/kgracey93)
-- njan volker (https://github.com/jan-webdev)
+- Jan Völker (https://github.com/jan-webdev)
 - ale rodriguez (https://github.com/prullansky)
 
 ## Acknowledgments
